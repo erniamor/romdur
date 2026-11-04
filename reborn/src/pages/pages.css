@@ -17,9 +17,13 @@
   --franklin: "Libre Franklin", "Franklin Gothic Medium", Arial, sans-serif;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
-html { background: var(--fond); }
+html {
+  background: var(--fond);
+}
 
 body {
   margin: 0;
@@ -45,7 +49,10 @@ body {
   letter-spacing: 0.02em;
 }
 
-.titre a { color: inherit; text-decoration: none; }
+.titre a {
+  color: inherit;
+  text-decoration: none;
+}
 
 .etiquette {
   display: block;
@@ -56,7 +63,10 @@ body {
   color: var(--encre-douce);
 }
 
-.bloc { margin-bottom: 1.75rem; padding: 1.25rem 1.4rem 1.4rem; }
+.bloc {
+  margin-bottom: 1.75rem;
+  padding: 1.25rem 1.4rem 1.4rem;
+}
 
 /* —— 2004 */
 .origine {
@@ -76,9 +86,21 @@ body {
   align-items: start;
 }
 
-.origine p { margin: 0 0 0.8em; }
-.origine .annee { margin: 0; color: var(--encre-douce); }
-.origine img { display: block; width: 204px; max-width: 100%; height: auto; }
+.origine p {
+  margin: 0 0 0.8em;
+}
+
+.origine .annee {
+  margin: 0;
+  color: var(--encre-douce);
+}
+
+.origine img {
+  display: block;
+  width: 204px;
+  max-width: 100%;
+  height: auto;
+}
 
 /* —— 2026 */
 .reborn {
@@ -88,12 +110,26 @@ body {
   line-height: 1.65;
 }
 
-.reborn p { margin: 0 0 0.9em; }
-.reborn p:last-child { margin-bottom: 0; }
-.reborn strong { font-weight: 600; }
+.reborn p {
+  margin: 0 0 0.9em;
+}
 
-.reborn ul { margin: 0 0 0.9em; padding-left: 1.2em; }
-.reborn li { margin-bottom: 0.3em; }
+.reborn p:last-child {
+  margin-bottom: 0;
+}
+
+.reborn strong {
+  font-weight: 600;
+}
+
+.reborn ul {
+  margin: 0 0 0.9em;
+  padding-left: 1.2em;
+}
+
+.reborn li {
+  margin-bottom: 0.3em;
+}
 
 kbd {
   display: inline-block;
@@ -125,15 +161,39 @@ kbd {
   transition: background 0.2s, color 0.2s, transform 0.2s;
 }
 
-.bouton:hover, .bouton:focus-visible {
+.bouton:hover,
+.bouton:focus-visible {
   background: rgba(255, 255, 255, 0.8);
   color: var(--survol);
   transform: scale(1.04);
 }
 
-.bouton:focus-visible { outline: 2px solid var(--survol); outline-offset: 2px; }
+.bouton:focus-visible {
+  outline: 2px solid var(--survol);
+  outline-offset: 2px;
+}
 
-.bouton.principal { padding: 0.75rem 2.6rem; font-size: 1.0625rem; letter-spacing: 0.12em; }
+.bouton.principal {
+  padding: 0.75rem 2.6rem;
+  font-size: 1.0625rem;
+  letter-spacing: 0.12em;
+}
+
+.liens {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.lien {
+  color: var(--encre);
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.lien:hover {
+  color: var(--survol);
+}
 
 /* —— interview */
 .retour {
@@ -144,10 +204,22 @@ kbd {
   text-decoration: none;
 }
 
-.retour:hover { color: var(--survol); }
+.retour:hover {
+  color: var(--survol);
+}
 
-.interview h2 { margin: 0 0 0.2rem; font-size: 1.25rem; font-weight: 600; }
-.interview .date { margin: 0 0 1.5rem; color: var(--encre-douce); font-size: 0.875rem; }
+.interview h2 {
+  margin: 0 0 0.2rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.interview .date {
+  margin: 0 0 1.5rem;
+  color: var(--encre-douce);
+  font-size: 0.875rem;
+}
+
 .interview h3 {
   margin: 2.2rem 0 0;
   padding-top: 1rem;
@@ -158,18 +230,46 @@ kbd {
   text-transform: uppercase;
   color: var(--encre-douce);
 }
-.interview .question { margin: 1.6em 0 0.4em; font-weight: 600; }
-.interview h3 + .question { margin-top: 1em; }
-.interview .reponse { margin: 0 0 0.9em; }
-.interview .a-venir { color: var(--encre-douce); font-style: italic; }
+
+.interview .question {
+  margin: 1.6em 0 0.4em;
+  font-weight: 600;
+}
+
+.interview h3+.question {
+  margin-top: 1em;
+}
+
+.interview .reponse {
+  margin: 0 0 0.9em;
+}
+
+.interview .a-venir {
+  color: var(--encre-douce);
+  font-style: italic;
+}
 
 @media (max-width: 560px) {
-  .page { padding-top: 2.25rem; }
-  .origine .contenu { grid-template-columns: 1fr; }
-  .origine img { margin: 0 auto; }
+  .page {
+    padding-top: 2.25rem;
+  }
+
+  .origine .contenu {
+    grid-template-columns: 1fr;
+  }
+
+  .origine img {
+    margin: 0 auto;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .bouton { transition: none; }
-  .bouton:hover, .bouton:focus-visible { transform: none; }
+  .bouton {
+    transition: none;
+  }
+
+  .bouton:hover,
+  .bouton:focus-visible {
+    transform: none;
+  }
 }
