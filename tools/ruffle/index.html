@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>romdur — original (Ruffle)</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #afafaf; }
+  body { display: grid; place-items: center; }
+  #player { width: 980px; height: 730px; }
+</style>
+</head>
+<body>
+<div id="player"></div>
+<script src="/tools/ruffle/node_modules/@ruffle-rs/ruffle/ruffle.js"></script>
+<script>
+  window.RufflePlayer = window.RufflePlayer || {};
+  window.addEventListener("load", () => {
+    const ruffle = window.RufflePlayer.newest();
+    const player = ruffle.createPlayer();
+    player.style.width = "980px";
+    player.style.height = "730px";
+    document.getElementById("player").appendChild(player);
+    // base: les chemins relatifs du SWF (interface.swf, externdata/…) sont résolus depuis original/
+    player.ruffle().load({ url: "/original/preload.swf", base: "/original/", autoplay: "on", unmuteOverlay: new URLSearchParams(location.search).has("shot") ? "hidden" : "visible", letterbox: "on" });
+  });
+</script>
+</body>
+</html>

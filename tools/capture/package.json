@@ -1,0 +1,9 @@
+{
+  "name": "romdur-capture",
+  "private": true,
+  "type": "module",
+  "description": "Captures automatiques (original Ruffle ou nouvelle version) pour comparer image par image.",
+  "dependencies": {
+    "puppeteer-core": "*"
+  }
+}

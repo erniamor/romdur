@@ -1,0 +1,10 @@
+stop();
+this.updateInfoLien(-1);
+this.lien_txt.backgroundColor = "0x181731";
+this.lien_txt.borderColor = "0xFFFFFF";
+this.lien_txt.background = false;
+this.lien_txt.border = false;
+this.lien_txt.autoSize = true;
+percent_txt.embedFonts = true;
+lien_txt.embedFonts = true;
+info_txt.embedFonts = true;

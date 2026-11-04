@@ -1,0 +1,2278 @@
+SWF v6 rect(twips)=[0, 19600, 0, 14600] fps=25.0 frames=1
+SetBackgroundColor len=3
+DefineSprite id=1 frames=1
+  [frame 1] DoAction:
+    00000 constantPool [18]
+    00150 stop
+    00151 push 'univers', 500, 1, 'Repere3d'
+    00168 newObject
+    00169 setVariable
+    00170 push 'nbPts', 0.0
+    00184 defineLocal
+    00185 push 'univers'
+    00190 getVariable
+    00191 push 'array'
+    00196 getMember
+    00197 push 'nbPts'
+    00202 getVariable
+    00203 push 'nbPts'
+    00208 getVariable
+    00209 push 'pts', 'this'
+    00216 getVariable
+    00217 push 0.0, 200, -200, 6, 'Particle3d'
+    00246 newObject
+    00247 setMember
+    00248 push 360
+    00256 randomNumber
+    00257 push 1, 'univers'
+    00267 getVariable
+    00268 push 'array'
+    00273 getMember
+    00274 push 'nbPts'
+    00279 getVariable
+    00280 getMember
+    00281 push 'position'
+    00286 getMember
+    00287 push 'rotateZ'
+    00292 callMethod
+    00293 pop
+    00294 push 500, 1, 'univers'
+    00309 getVariable
+    00310 push 'array'
+    00315 getMember
+    00316 push 'nbPts'
+    00321 getVariable
+    00322 getMember
+    00323 push 'render'
+    00328 callMethod
+    00329 pop
+    00330 push 'this'
+    00335 getVariable
+    00336 push 'onMouseDown'
+    00341 function () {
+      00000 push 'nbPts', 'nbPts'
+      00007 getVariable
+      00008 push 50
+      00016 less2
+      00017 if -> 00039
+      00022 push 0.0
+      00034 jump -> 00054
+      00039 push 'nbPts'
+      00044 getVariable
+      00045 push 1
+      00053 add2
+      00054 setVariable
+      00055 push 0.0, 'this'
+      00069 getVariable
+      00070 push 'pts_', 'nbPts'
+      00077 getVariable
+      00078 add2
+      00079 getMember
+      00080 push 'removeMovieClip'
+      00085 callMethod
+      00086 pop
+      00087 push 'univers'
+      00092 getVariable
+      00093 push 'array'
+      00098 getMember
+      00099 push 'nbPts'
+      00104 getVariable
+      00105 push 'nbPts'
+      00110 getVariable
+      00111 push 'pts', 'this'
+      00118 getVariable
+      00119 push 0.0, 0.0, '', 21
+      00147 getProperty
+      00148 subtract
+      00149 push '', 20
+      00159 getProperty
+      00160 push 6, 'Particle3d'
+      00170 newObject
+      00171 setMember
+    }
+    00521 setMember
+    00522 push 'this'
+    00527 getVariable
+    00528 push 'onEnterFrame'
+    00533 function () {
+      00000 push 'this'
+      00005 getVariable
+      00006 push '_xmouse'
+      00011 getMember
+      00012 push 100
+      00020 divide
+      00021 push 'this'
+      00026 getVariable
+      00027 push '_ymouse'
+      00032 getMember
+      00033 push 100
+      00041 divide
+      00042 push 2, 'univers'
+      00052 getVariable
+      00053 push 'rotateXY'
+      00058 callMethod
+      00059 pop
+    }
+    00601 setMember
+    00602 end
+  -- ShowFrame (end frame 1)
+  End len=0
+ExportAssets ['1:univ']
+DefineShape len=48 id=2
+DefineSprite id=3 frames=1
+  PlaceObject2 depth=1 char=2 flags=0x6
+  -- ShowFrame (end frame 1)
+  End len=0
+ExportAssets ['3:pts']
+DefineShape3 len=33 id=4
+DefineFont2 len=3267 id=5
+DefineText len=39 id=6
+DefineSprite id=7 frames=1
+  PlaceObject2 depth=1 char=4 flags=0x6
+  PlaceObject2 depth=2 char=6 flags=0x6
+  -- ShowFrame (end frame 1)
+  End len=0
+ExportAssets ['7:btEntrer']
+DefineShape len=23 id=8
+DefineSprite id=9 frames=1
+  PlaceObject2 depth=1 char=8 flags=0x6
+  -- ShowFrame (end frame 1)
+  End len=0
+ExportAssets ['9:barre']
+DefineSprite id=10 frames=1
+  [frame 1] DoAction:
+    00000 constantPool [23]
+    00163 function update() {
+      00000 push 'this'
+      00005 getVariable
+      00006 with {
+        00000 push 0.0, 'clear'
+        00014 callFunction
+        00015 pop
+        00016 push 0.0, '0x000000', 1, 3, 'lineStyle'
+        00042 callFunction
+        00043 pop
+        00044 push 'colors', '_global'
+        00051 getVariable
+        00052 push 'colorDegrade'
+        00057 getMember
+        00058 setVariable
+        00059 push 'alphas', 100, 100, 2
+        00079 initArray
+        00080 setVariable
+        00081 push 'ratios', 255, 0.0, 2
+        00105 initArray
+        00106 setVariable
+        00107 push 'matrix', 'matrixType', 'box', 'x', -250, 'y', -250, 'w', 500, 'h', 500, 'r', 1, 6
+        00156 initObject
+        00157 setVariable
+        00158 push 'matrix'
+        00163 getVariable
+        00164 push 'ratios'
+        00169 getVariable
+        00170 push 'alphas'
+        00175 getVariable
+        00176 push 'colors'
+        00181 getVariable
+        00182 push 'radial', 5, 'beginGradientFill'
+        00194 callFunction
+        00195 pop
+        00196 push -365, -490, 2, 'moveto'
+        00216 callFunction
+        00217 pop
+        00218 push -365, 490, 2, 'lineto'
+        00238 callFunction
+        00239 pop
+        00240 push 365, 490, 2, 'lineto'
+        00260 callFunction
+        00261 pop
+        00262 push 365, -490, 2, 'lineto'
+        00282 callFunction
+        00283 pop
+        00284 push -365, -490, 2, 'lineto'
+        00304 callFunction
+        00305 pop
+        00306 push 0.0, 'endFill'
+        00320 callFunction
+        00321 pop
+      }
+    }
+    00510 stop
+    00511 push '_global'
+    00516 getVariable
+    00517 push 'colorDegrade', 11513775, 13421772, 2
+    00537 initArray
+    00538 setMember
+    00539 push 0.0, 'update'
+    00553 callFunction
+    00554 pop
+    00555 end
+  -- ShowFrame (end frame 1)
+  End len=0
+ExportAssets ['10:degrade']
+[frame 1] DoAction:
+  00000 constantPool [63]
+  00453 push 'Math'
+  00458 getVariable
+  00459 push 'sinD'
+  00464 function (angle) {
+    00000 push 'angle'
+    00005 getVariable
+    00006 push 0.017453292519943295
+    00018 multiply
+    00019 push 1, 'Math'
+    00029 getVariable
+    00030 push 'sin'
+    00035 callMethod
+    00036 return
+  }
+  00515 setMember
+  00516 push 'Math'
+  00521 getVariable
+  00522 push 'cosD'
+  00527 function (angle) {
+    00000 push 'angle'
+    00005 getVariable
+    00006 push 0.017453292519943295
+    00018 multiply
+    00019 push 1, 'Math'
+    00029 getVariable
+    00030 push 'cos'
+    00035 callMethod
+    00036 return
+  }
+  00578 setMember
+  00579 push 'Math'
+  00584 getVariable
+  00585 push 'acosD'
+  00590 function (ratio) {
+    00000 push 'ratio'
+    00005 getVariable
+    00006 push 1, 'Math'
+    00016 getVariable
+    00017 push 'acos'
+    00022 callMethod
+    00023 push 57.29577951308232
+    00035 multiply
+    00036 return
+  }
+  00641 setMember
+  00642 push '_global'
+  00647 getVariable
+  00648 push 'Vector3d'
+  00653 function (x, y, z) {
+    00000 push r1
+    00005 push 'this'
+    00010 getVariable
+    00011 storeRegister r1
+    00015 pop
+    00016 push r1, 'x', 'x'
+    00025 getVariable
+    00026 setMember
+    00027 push r1, 'y', 'y'
+    00036 getVariable
+    00037 setMember
+    00038 push r1, 'z', 'z'
+    00047 getVariable
+    00048 setMember
+    00049 storeRegister r1
+    00053 pop
+  }
+  00721 setMember
+  00722 push 'Vector3d'
+  00727 getVariable
+  00728 push 'prototype'
+  00733 getMember
+  00734 push 'getPerspective'
+  00739 function (viewDist) {
+    00000 push r1
+    00005 push 'viewDist'
+    00010 getVariable
+    00011 storeRegister r1
+    00015 pop
+    00016 push r1, undefined
+    00022 equals2
+    00023 not
+    00024 if -> 00042
+    00029 push 1000
+    00037 storeRegister r1
+    00041 pop
+    00042 push r1, 'this'
+    00049 getVariable
+    00050 push 'z'
+    00055 getMember
+    00056 push r1
+    00061 add2
+    00062 divide
+    00063 jump -> 00072
+    00068 push undefined
+    00072 storeRegister r0
+    00076 pop
+    00077 storeRegister r1
+    00081 pop
+    00082 push r0
+    00087 return
+  }
+  00844 setMember
+  00845 push 'Vector3d'
+  00850 getVariable
+  00851 push 'prototype'
+  00856 getMember
+  00857 push 'persProject'
+  00862 function (p) {
+    00000 push 'this'
+    00005 getVariable
+    00006 with {
+      00000 push 'p'
+      00005 getVariable
+      00006 push undefined
+      00010 equals2
+      00011 not
+      00012 if -> 00035
+      00017 push 'p', 0.0, 'getPerspective'
+      00033 callFunction
+      00034 setVariable
+      00035 push 'x', 'x'
+      00042 getVariable
+      00043 push 'p'
+      00048 getVariable
+      00049 multiply
+      00050 setVariable
+      00051 push 'y', 'y'
+      00058 getVariable
+      00059 push 'p'
+      00064 getVariable
+      00065 multiply
+      00066 setVariable
+      00067 push 'z', 0.0
+      00081 setVariable
+    }
+  }
+  00965 setMember
+  00966 push 'Vector3d'
+  00971 getVariable
+  00972 push 'prototype'
+  00977 getMember
+  00978 push 'persProjectNew'
+  00983 function (p) {
+    00000 push 'this'
+    00005 getVariable
+    00006 with {
+      00000 push 'p'
+      00005 getVariable
+      00006 push undefined
+      00010 equals2
+      00011 not
+      00012 if -> 00035
+      00017 push 'p', 0.0, 'getPerspective'
+      00033 callFunction
+      00034 setVariable
+      00035 push 0.0, 'p'
+      00049 getVariable
+      00050 push 'y'
+      00055 getVariable
+      00056 multiply
+      00057 push 'p'
+      00062 getVariable
+      00063 push 'x'
+      00068 getVariable
+      00069 multiply
+      00070 push 3, 'constructor'
+      00080 newObject
+      00081 return
+    }
+  }
+  01086 setMember
+  01087 push 'Vector3d'
+  01092 getVariable
+  01093 push 'prototype'
+  01098 getMember
+  01099 push 'rotateXYTrig'
+  01104 function (ca, sa, cb, sb) {
+    00000 push 'this'
+    00005 getVariable
+    00006 with {
+      00000 push 'rz', 'y'
+      00007 getVariable
+      00008 push 'sa'
+      00013 getVariable
+      00014 multiply
+      00015 push 'z'
+      00020 getVariable
+      00021 push 'ca'
+      00026 getVariable
+      00027 multiply
+      00028 add2
+      00029 defineLocal
+      00030 push 'y', 'y'
+      00037 getVariable
+      00038 push 'ca'
+      00043 getVariable
+      00044 multiply
+      00045 push 'z'
+      00050 getVariable
+      00051 push 'sa'
+      00056 getVariable
+      00057 multiply
+      00058 subtract
+      00059 setVariable
+      00060 push 'z', 'x'
+      00067 getVariable
+      00068 push 0.0, 'sb'
+      00082 getVariable
+      00083 subtract
+      00084 multiply
+      00085 push 'rz'
+      00090 getVariable
+      00091 push 'cb'
+      00096 getVariable
+      00097 multiply
+      00098 add2
+      00099 setVariable
+      00100 push 'x', 'x'
+      00107 getVariable
+      00108 push 'cb'
+      00113 getVariable
+      00114 multiply
+      00115 push 'rz'
+      00120 getVariable
+      00121 push 'sb'
+      00126 getVariable
+      00127 multiply
+      00128 add2
+      00129 setVariable
+    }
+  }
+  01265 setMember
+  01266 push 'Vector3d'
+  01271 getVariable
+  01272 push 'prototype'
+  01277 getMember
+  01278 push 'rotateZ'
+  01283 function (angle) {
+    00000 push 'Math'
+    00005 getVariable
+    00006 with {
+      00000 push 'ca', 'angle'
+      00007 getVariable
+      00008 push 1, 'cosD'
+      00018 callFunction
+      00019 defineLocal
+      00020 push 'sa', 'angle'
+      00027 getVariable
+      00028 push 1, 'sinD'
+      00038 callFunction
+      00039 defineLocal
+    }
+    00051 push 'this'
+    00056 getVariable
+    00057 with {
+      00000 push 'tempX', 'x'
+      00007 getVariable
+      00008 push 'ca'
+      00013 getVariable
+      00014 multiply
+      00015 push 'y'
+      00020 getVariable
+      00021 push 'sa'
+      00026 getVariable
+      00027 multiply
+      00028 subtract
+      00029 defineLocal
+      00030 push 'tempY', 'x'
+      00037 getVariable
+      00038 push 'sa'
+      00043 getVariable
+      00044 multiply
+      00045 push 'y'
+      00050 getVariable
+      00051 push 'ca'
+      00056 getVariable
+      00057 multiply
+      00058 add2
+      00059 defineLocal
+      00060 push 'x', 'tempX'
+      00067 getVariable
+      00068 setVariable
+      00069 push 'y', 'tempY'
+      00076 getVariable
+      00077 setVariable
+    }
+  }
+  01437 setMember
+  01438 push 'Math'
+  01443 getVariable
+  01444 push 'cosD'
+  01449 getMember
+  01450 typeOf
+  01451 push 'function'
+  01456 equals2
+  01457 not
+  01458 not
+  01459 if -> 01470
+  01464 push 'error: Math.cosD function mission'
+  01469 trace
+  01470 push '_global'
+  01475 getVariable
+  01476 push 'Particle3d'
+  01481 function (x, y, z, timeline, mcID, depth, rot) {
+    00000 push r1, r2
+    00007 push 'this'
+    00012 getVariable
+    00013 storeRegister r1
+    00017 pop
+    00018 push 'rot'
+    00023 getVariable
+    00024 storeRegister r2
+    00028 pop
+    00029 push r1, 'position', 'z'
+    00038 getVariable
+    00039 push 'y'
+    00044 getVariable
+    00045 push 'x'
+    00050 getVariable
+    00051 push 3, 'Vector3d'
+    00061 newObject
+    00062 setMember
+    00063 push r1, 'timeline', 'timeline'
+    00072 getVariable
+    00073 setMember
+    00074 push r1, 'mc', 'depth'
+    00083 getVariable
+    00084 push 'mcID'
+    00089 getVariable
+    00090 push 2, r1, 'attachGraphic'
+    00102 callMethod
+    00103 setMember
+    00104 push r1, 'rotation', r2, undefined
+    00114 equals2
+    00115 if -> 00173
+    00120 push r2, 2
+    00130 getMember
+    00131 push r2, 1
+    00141 getMember
+    00142 push r2, 0.0
+    00156 getMember
+    00157 push 3, 'Vector3d'
+    00167 newObject
+    00168 jump -> 00211
+    00173 push 0.0, 0.0, 0.0, 3, 'Vector3d'
+    00210 newObject
+    00211 setMember
+    00212 push r1, 'scale', 100
+    00224 setMember
+    00225 push 0.0, r1, 'render'
+    00241 callMethod
+    00242 pop
+    00243 storeRegister r2
+    00247 pop
+    00248 storeRegister r1
+    00252 pop
+  }
+  01772 setMember
+  01773 push 'Particle3d'
+  01778 getVariable
+  01779 push 'prototype'
+  01784 getMember
+  01785 push 'attachGraphic'
+  01790 function (mcID, depth) {
+    00000 push 'depth'
+    00005 getVariable
+    00006 push 'mcID'
+    00011 getVariable
+    00012 push '_'
+    00017 add2
+    00018 push 'depth'
+    00023 getVariable
+    00024 add2
+    00025 push 'mcID'
+    00030 getVariable
+    00031 push 3, 'this'
+    00041 getVariable
+    00042 push 'timeline'
+    00047 getMember
+    00048 push 'attachMovie'
+    00053 callMethod
+    00054 return
+  }
+  01864 setMember
+  01865 push 'Particle3d'
+  01870 getVariable
+  01871 push 'prototype'
+  01876 getMember
+  01877 push 'render'
+  01882 function (perspective) {
+    00000 push 'pers', 'perspective'
+    00007 getVariable
+    00008 push 1, 'this'
+    00018 getVariable
+    00019 push 'position'
+    00024 getMember
+    00025 push 'getPerspective'
+    00030 callMethod
+    00031 defineLocal
+    00032 push 'this'
+    00037 getVariable
+    00038 push 'screenPos', 'pers'
+    00045 getVariable
+    00046 push 1, 'this'
+    00056 getVariable
+    00057 push 'position'
+    00062 getMember
+    00063 push 'persProjectNew'
+    00068 callMethod
+    00069 setMember
+    00070 push 'this'
+    00075 getVariable
+    00076 push 'mc'
+    00081 getMember
+    00082 with {
+      00000 push '_x', 'this'
+      00007 getVariable
+      00008 push 'screenPos'
+      00013 getMember
+      00014 push 'x'
+      00019 getMember
+      00020 setVariable
+      00021 push '_y', 0.0, 'this'
+      00037 getVariable
+      00038 push 'screenPos'
+      00043 getMember
+      00044 push 'y'
+      00049 getMember
+      00050 subtract
+      00051 setVariable
+      00052 push '_xscale', '_yscale', 'this'
+      00061 getVariable
+      00062 push 'scale'
+      00067 getMember
+      00068 push 'pers'
+      00073 getVariable
+      00074 multiply
+      00075 push 1.5
+      00087 multiply
+      00088 storeRegister r0
+      00092 setVariable
+      00093 push r0
+      00098 setVariable
+      00099 push 100000, 'this'
+      00109 getVariable
+      00110 push 'position'
+      00115 getMember
+      00116 push 'z'
+      00121 getMember
+      00122 push 100
+      00130 multiply
+      00131 subtract
+      00132 push 1, 'swapDepths'
+      00142 callFunction
+      00143 pop
+    }
+  }
+  02133 setMember
+  02134 push '_global'
+  02139 getVariable
+  02140 push 'Repere3d'
+  02145 function (perspective) {
+    00000 push r1
+    00005 push 'this'
+    00010 getVariable
+    00011 storeRegister r1
+    00015 pop
+    00016 push r1, 'array', 0.0, 'Array'
+    00034 newObject
+    00035 setMember
+    00036 push r1, 'idObjet', 0.0, 'Array'
+    00054 newObject
+    00055 setMember
+    00056 push r1, 'pers', 'perspective'
+    00065 getVariable
+    00066 setMember
+    00067 storeRegister r1
+    00071 pop
+  }
+  02237 setMember
+  02238 push 'Repere3d'
+  02243 getVariable
+  02244 push 'prototype'
+  02249 getMember
+  02250 push 'rotateXY'
+  02255 function (a, b) {
+    00000 push 'p', 'this'
+    00007 getVariable
+    00008 push 'pers'
+    00013 getMember
+    00014 defineLocal
+    00015 push 'Math'
+    00020 getVariable
+    00021 with {
+      00000 push 'ca', 'a'
+      00007 getVariable
+      00008 push 1, 'cosD'
+      00018 callFunction
+      00019 defineLocal
+      00020 push 'sa', 'a'
+      00027 getVariable
+      00028 push 1, 'sinD'
+      00038 callFunction
+      00039 defineLocal
+      00040 push 'cb', 'b'
+      00047 getVariable
+      00048 push 1, 'cosD'
+      00058 callFunction
+      00059 defineLocal
+      00060 push 'sb', 'b'
+      00067 getVariable
+      00068 push 1, 'sinD'
+      00078 callFunction
+      00079 defineLocal
+    }
+    00106 push 'i', 'this'
+    00113 getVariable
+    00114 push 'array'
+    00119 getMember
+    00120 push 'length'
+    00125 getMember
+    00126 defineLocal
+    00127 push 'i'
+    00132 getVariable
+    00133 push 'i', 'i'
+    00140 getVariable
+    00141 decrement
+    00142 setVariable
+    00143 not
+    00144 if -> 00384
+    00149 push 'sb'
+    00154 getVariable
+    00155 push 'cb'
+    00160 getVariable
+    00161 push 'sa'
+    00166 getVariable
+    00167 push 'ca'
+    00172 getVariable
+    00173 push 4, 'this'
+    00183 getVariable
+    00184 push 'array'
+    00189 getMember
+    00190 push 'i'
+    00195 getVariable
+    00196 getMember
+    00197 push 'position'
+    00202 getMember
+    00203 push 'rotateXYTrig'
+    00208 callMethod
+    00209 pop
+    00210 push 'p'
+    00215 getVariable
+    00216 push 1, 'this'
+    00226 getVariable
+    00227 push 'array'
+    00232 getMember
+    00233 push 'i'
+    00238 getVariable
+    00239 getMember
+    00240 push 'render'
+    00245 callMethod
+    00246 pop
+    00247 push 'this'
+    00252 getVariable
+    00253 push 'array'
+    00258 getMember
+    00259 push 'i'
+    00264 getVariable
+    00265 getMember
+    00266 push 'rotation'
+    00271 getMember
+    00272 push 'x', 'this'
+    00279 getVariable
+    00280 push 'array'
+    00285 getMember
+    00286 push 'i'
+    00291 getVariable
+    00292 getMember
+    00293 push 'rotation'
+    00298 getMember
+    00299 push 'x'
+    00304 getMember
+    00305 push 'a'
+    00310 getVariable
+    00311 add2
+    00312 setMember
+    00313 push 'this'
+    00318 getVariable
+    00319 push 'array'
+    00324 getMember
+    00325 push 'i'
+    00330 getVariable
+    00331 getMember
+    00332 push 'rotation'
+    00337 getMember
+    00338 push 'y', 'this'
+    00345 getVariable
+    00346 push 'array'
+    00351 getMember
+    00352 push 'i'
+    00357 getVariable
+    00358 getMember
+    00359 push 'rotation'
+    00364 getMember
+    00365 push 'y'
+    00370 getMember
+    00371 push 'b'
+    00376 getVariable
+    00377 add2
+    00378 setMember
+    00379 jump -> 00127
+  }
+  02651 setMember
+  02652 stop
+  02653 end
+[frame 1] DoAction:
+  00000 constantPool [144]
+  01333 function sampleItem(argElements) {
+    00000 push 'this'
+    00005 getVariable
+    00006 push 'obj', 'argElements'
+    00013 getVariable
+    00014 push 0.0
+    00026 getMember
+    00027 setMember
+    00028 push 'this'
+    00033 getVariable
+    00034 push 'file', 'argElements'
+    00041 getVariable
+    00042 push 1
+    00050 getMember
+    00051 setMember
+  }
+  01415 function monOnLoad(succÃ¨s) {
+    00000 push r1, r2, r3
+    00009 push '_global'
+    00014 getVariable
+    00015 storeRegister r1
+    00019 pop
+    00020 push 'succÃ¨s'
+    00025 getVariable
+    00026 not
+    00027 if -> 01571
+    00032 push '_root'
+    00037 getVariable
+    00038 push 'conteneur'
+    00043 getMember
+    00044 push 'chargeur_data'
+    00049 getMember
+    00050 push 'barre'
+    00055 getMember
+    00056 push '_xscale', 100
+    00066 setMember
+    00067 push '_root'
+    00072 getVariable
+    00073 push 'conteneur'
+    00078 getMember
+    00079 push 'chargeur_data'
+    00084 getMember
+    00085 push 'progression_txt'
+    00090 getMember
+    00091 push 'text', '100 %'
+    00098 setMember
+    00099 push 'dataTemp', 'Â§', 1, 'myXML'
+    00113 getVariable
+    00114 push 'firstchild'
+    00119 getMember
+    00120 push 'firstchild'
+    00125 getMember
+    00126 push 'nodeValue'
+    00131 getMember
+    00132 push 'split'
+    00137 callMethod
+    00138 setVariable
+    00139 push 'lien_menu_temp', '#', 1, 'dataTemp'
+    00153 getVariable
+    00154 push 0.0
+    00166 getMember
+    00167 push 'split'
+    00172 callMethod
+    00173 setVariable
+    00174 push 'lien_site_temp', '#', 1, 'dataTemp'
+    00188 getVariable
+    00189 push 1
+    00197 getMember
+    00198 push 'split'
+    00203 callMethod
+    00204 setVariable
+    00205 push 'audio_temp', '#', 1, 'dataTemp'
+    00219 getVariable
+    00220 push 2
+    00228 getMember
+    00229 push 'split'
+    00234 callMethod
+    00235 setVariable
+    00236 push 'web_temp', '#', 1, 'dataTemp'
+    00250 getVariable
+    00251 push 3
+    00259 getMember
+    00260 push 'split'
+    00265 callMethod
+    00266 setVariable
+    00267 push 'flash_temp', '#', 1, 'dataTemp'
+    00281 getVariable
+    00282 push 4
+    00290 getMember
+    00291 push 'split'
+    00296 callMethod
+    00297 setVariable
+    00298 push 'sample_temp', '#', 1, 'dataTemp'
+    00312 getVariable
+    00313 push 5
+    00321 getMember
+    00322 push 'split'
+    00327 callMethod
+    00328 setVariable
+    00329 push 'dataTemp'
+    00334 delete2
+    00335 pop
+    00336 push r1, 'data_lien', 0.0, 'Array'
+    00354 newObject
+    00355 setMember
+    00356 push 'lienMenusLink', 0.0, 'Array'
+    00372 newObject
+    00373 setVariable
+    00374 push 0.0
+    00386 storeRegister r2
+    00390 pop
+    00391 push r2, 'lien_menu_temp'
+    00398 getVariable
+    00399 push 'length'
+    00404 getMember
+    00405 less2
+    00406 not
+    00407 if -> 00507
+    00412 push r1, 'data_lien'
+    00419 getMember
+    00420 push r2, '|', 1, 'lien_menu_temp'
+    00434 getVariable
+    00435 push r2
+    00440 getMember
+    00441 push 'split'
+    00446 callMethod
+    00447 push 1, 'lienMenuItem'
+    00457 newObject
+    00458 setMember
+    00459 push 'lienMenusLink'
+    00464 getVariable
+    00465 push r1, 'data_lien'
+    00472 getMember
+    00473 push r2
+    00478 getMember
+    00479 push 'Id'
+    00484 getMember
+    00485 push r2
+    00490 setMember
+    00491 push r2
+    00496 increment
+    00497 storeRegister r2
+    00501 pop
+    00502 jump -> 00391
+    00507 push 'Site', 0.0, 'Array'
+    00523 newObject
+    00524 setVariable
+    00525 push 'lienSiteLink', 0.0, 'Array'
+    00541 newObject
+    00542 setVariable
+    00543 push 0.0
+    00555 storeRegister r2
+    00559 pop
+    00560 push r2, 'lien_site_temp'
+    00567 getVariable
+    00568 push 'length'
+    00573 getMember
+    00574 less2
+    00575 not
+    00576 if -> 00712
+    00581 push 'Site'
+    00586 getVariable
+    00587 push r2, '|', 1, 'lien_site_temp'
+    00601 getVariable
+    00602 push r2
+    00607 getMember
+    00608 push 'split'
+    00613 callMethod
+    00614 push 1, 'lienSiteItem'
+    00624 newObject
+    00625 setMember
+    00626 push 'Site'
+    00631 getVariable
+    00632 push r2
+    00637 getMember
+    00638 push 'MenuParent', 'lienMenusLink'
+    00645 getVariable
+    00646 push 'Site'
+    00651 getVariable
+    00652 push r2
+    00657 getMember
+    00658 push 'MenuParent'
+    00663 getMember
+    00664 getMember
+    00665 setMember
+    00666 push 'lienSiteLink'
+    00671 getVariable
+    00672 push 'Site'
+    00677 getVariable
+    00678 push r2
+    00683 getMember
+    00684 push 'ID'
+    00689 getMember
+    00690 push r2
+    00695 setMember
+    00696 push r2
+    00701 increment
+    00702 storeRegister r2
+    00706 pop
+    00707 jump -> 00560
+    00712 push 'Site'
+    00717 getVariable
+    00718 enumerate2
+    00719 storeRegister r0
+    00723 push null
+    00727 equals2
+    00728 if -> 00805
+    00733 push r0
+    00738 storeRegister r2
+    00742 pop
+    00743 push 'Site'
+    00748 getVariable
+    00749 push r2
+    00754 getMember
+    00755 push 1, r1, 'data_lien'
+    00767 getMember
+    00768 push 'Site'
+    00773 getVariable
+    00774 push r2
+    00779 getMember
+    00780 push 'MenuParent'
+    00785 getMember
+    00786 getMember
+    00787 push 'Site'
+    00792 getMember
+    00793 push 'push'
+    00798 callMethod
+    00799 pop
+    00800 jump -> 00719
+    00805 push 'lien_menu_temp'
+    00810 delete2
+    00811 pop
+    00812 push 'lien_site_temp'
+    00817 delete2
+    00818 pop
+    00819 push 'Site'
+    00824 delete2
+    00825 pop
+    00826 push 'lienMenusLink'
+    00831 delete2
+    00832 pop
+    00833 push 'lienSiteLink'
+    00838 delete2
+    00839 pop
+    00840 push r1, 'data_audio', 0.0, 'Array'
+    00858 newObject
+    00859 setMember
+    00860 push 'audioLink', 0.0, 'Array'
+    00876 newObject
+    00877 setVariable
+    00878 push 0.0
+    00890 storeRegister r2
+    00894 pop
+    00895 push r2, 'audio_temp'
+    00902 getVariable
+    00903 push 'length'
+    00908 getMember
+    00909 less2
+    00910 not
+    00911 if -> 01011
+    00916 push r1, 'data_audio'
+    00923 getMember
+    00924 push r2, '|', 1, 'audio_temp'
+    00938 getVariable
+    00939 push r2
+    00944 getMember
+    00945 push 'split'
+    00950 callMethod
+    00951 push 1, 'audioItem'
+    00961 newObject
+    00962 setMember
+    00963 push 'audioLink'
+    00968 getVariable
+    00969 push r1, 'data_audio'
+    00976 getMember
+    00977 push r2
+    00982 getMember
+    00983 push 'Id'
+    00988 getMember
+    00989 push r2
+    00994 setMember
+    00995 push r2
+    01000 increment
+    01001 storeRegister r2
+    01005 pop
+    01006 jump -> 00895
+    01011 push 'audioLink'
+    01016 delete2
+    01017 pop
+    01018 push 'audio_temp'
+    01023 delete2
+    01024 pop
+    01025 push r1, 'data_web', 0.0, 'Array'
+    01043 newObject
+    01044 setMember
+    01045 push 'webLink', 0.0, 'Array'
+    01061 newObject
+    01062 setVariable
+    01063 push 0.0
+    01075 storeRegister r2
+    01079 pop
+    01080 push r2, 'web_temp'
+    01087 getVariable
+    01088 push 'length'
+    01093 getMember
+    01094 less2
+    01095 not
+    01096 if -> 01196
+    01101 push r1, 'data_web'
+    01108 getMember
+    01109 push r2, '|', 1, 'web_temp'
+    01123 getVariable
+    01124 push r2
+    01129 getMember
+    01130 push 'split'
+    01135 callMethod
+    01136 push 1, 'webItem'
+    01146 newObject
+    01147 setMember
+    01148 push 'webLink'
+    01153 getVariable
+    01154 push r1, 'data_web'
+    01161 getMember
+    01162 push r2
+    01167 getMember
+    01168 push 'Id'
+    01173 getMember
+    01174 push r2
+    01179 setMember
+    01180 push r2
+    01185 increment
+    01186 storeRegister r2
+    01190 pop
+    01191 jump -> 01080
+    01196 push 'webLink'
+    01201 delete2
+    01202 pop
+    01203 push 'web_temp'
+    01208 delete2
+    01209 pop
+    01210 push r1, 'data_flash', 0.0, 'Array'
+    01228 newObject
+    01229 setMember
+    01230 push 'flashLink', 0.0, 'Array'
+    01246 newObject
+    01247 setVariable
+    01248 push 0.0
+    01260 storeRegister r2
+    01264 pop
+    01265 push r2, 'flash_temp'
+    01272 getVariable
+    01273 push 'length'
+    01278 getMember
+    01279 less2
+    01280 not
+    01281 if -> 01381
+    01286 push r1, 'data_flash'
+    01293 getMember
+    01294 push r2, '|', 1, 'flash_temp'
+    01308 getVariable
+    01309 push r2
+    01314 getMember
+    01315 push 'split'
+    01320 callMethod
+    01321 push 1, 'flashItem'
+    01331 newObject
+    01332 setMember
+    01333 push 'flashLink'
+    01338 getVariable
+    01339 push r1, 'data_flash'
+    01346 getMember
+    01347 push r2
+    01352 getMember
+    01353 push 'Id'
+    01358 getMember
+    01359 push r2
+    01364 setMember
+    01365 push r2
+    01370 increment
+    01371 storeRegister r2
+    01375 pop
+    01376 jump -> 01265
+    01381 push 'flashLink'
+    01386 delete2
+    01387 pop
+    01388 push 'flash_temp'
+    01393 delete2
+    01394 pop
+    01395 push r1, 'data_sample', 0.0, 'Array'
+    01413 newObject
+    01414 setMember
+    01415 push 0.0
+    01427 storeRegister r3
+    01431 pop
+    01432 push r3, 'sample_temp'
+    01439 getVariable
+    01440 push 'length'
+    01445 getMember
+    01446 less2
+    01447 not
+    01448 if -> 01525
+    01453 push '|', 1, 'sample_temp'
+    01465 getVariable
+    01466 push r3
+    01471 getMember
+    01472 push 'split'
+    01477 callMethod
+    01478 push 1, 'sampleItem'
+    01488 newObject
+    01489 push 1, r1, 'data_sample'
+    01501 getMember
+    01502 push 'push'
+    01507 callMethod
+    01508 pop
+    01509 push r3
+    01514 increment
+    01515 storeRegister r3
+    01519 pop
+    01520 jump -> 01432
+    01525 push 'sample_temp'
+    01530 delete2
+    01531 pop
+    01532 push 0.0, '_root'
+    01546 getVariable
+    01547 push 'conteneur'
+    01552 getMember
+    01553 push 'chargeur_sample'
+    01558 getMember
+    01559 push 'preloadSample'
+    01564 callMethod
+    01565 pop
+    01566 jump -> 01577
+    01571 push 'PARSING ERROR -> data_romdur.txt not exist ?'
+    01576 trace
+    01577 storeRegister r3
+    01581 pop
+    01582 storeRegister r2
+    01586 pop
+    01587 storeRegister r1
+    01591 pop
+  }
+  03032 function lienMenuItem(argElements) {
+    00000 push r1, r2
+    00007 push 'this'
+    00012 getVariable
+    00013 storeRegister r1
+    00017 pop
+    00018 push 'argElements'
+    00023 getVariable
+    00024 storeRegister r2
+    00028 pop
+    00029 push r1, 'Id', r2, 0.0
+    00047 getMember
+    00048 setMember
+    00049 push r1, 'Nom', r2, 1
+    00063 getMember
+    00064 setMember
+    00065 push r1, 'Info', r2, 2
+    00079 getMember
+    00080 setMember
+    00081 push r1, 'Site', 0.0, 'Array'
+    00099 newObject
+    00100 setMember
+    00101 storeRegister r2
+    00105 pop
+    00106 storeRegister r1
+    00110 pop
+  }
+  03175 function lienSiteItem(argElements) {
+    00000 push r1, r2
+    00007 push 'this'
+    00012 getVariable
+    00013 storeRegister r1
+    00017 pop
+    00018 push 'argElements'
+    00023 getVariable
+    00024 storeRegister r2
+    00028 pop
+    00029 push r1, 'Id', r2, 0.0
+    00047 getMember
+    00048 setMember
+    00049 push r1, 'MenuParent', r2, 1
+    00063 getMember
+    00064 setMember
+    00065 push r1, 'Nom', r2, 2
+    00079 getMember
+    00080 setMember
+    00081 push r1, 'Capture', r2, 3
+    00095 getMember
+    00096 setMember
+    00097 push r1, 'Info', r2, 4
+    00111 getMember
+    00112 setMember
+    00113 push r1, 'Lien', r2, 5
+    00127 getMember
+    00128 setMember
+    00129 push r1, 'Genre', r2, 6
+    00143 getMember
+    00144 setMember
+    00145 storeRegister r2
+    00149 pop
+    00150 storeRegister r1
+    00154 pop
+  }
+  03362 function audioItem(argElements) {
+    00000 push r1, r2
+    00007 push 'this'
+    00012 getVariable
+    00013 storeRegister r1
+    00017 pop
+    00018 push 'argElements'
+    00023 getVariable
+    00024 storeRegister r2
+    00028 pop
+    00029 push r1, 'Id', r2, 0.0
+    00047 getMember
+    00048 setMember
+    00049 push r1, 'Nom', r2, 1
+    00063 getMember
+    00064 setMember
+    00065 push r1, 'Auteur', r2, 2
+    00079 getMember
+    00080 setMember
+    00081 push r1, 'Album', r2, 3
+    00095 getMember
+    00096 setMember
+    00097 push r1, 'Genre', r2, 4
+    00111 getMember
+    00112 setMember
+    00113 push r1, 'Annee', r2, 5
+    00127 getMember
+    00128 setMember
+    00129 push r1, 'Note', r2, 6
+    00143 getMember
+    00144 setMember
+    00145 push r1, 'Temps', r2, 7
+    00159 getMember
+    00160 setMember
+    00161 push r1, 'Poids', r2, 8
+    00175 getMember
+    00176 setMember
+    00177 push r1, 'Fichier', r2, 9
+    00191 getMember
+    00192 setMember
+    00193 push r1, 'TempsSec', r2, 7
+    00207 getMember
+    00208 push 1, 'convertDate'
+    00218 callFunction
+    00219 setMember
+    00220 storeRegister r2
+    00224 pop
+    00225 storeRegister r1
+    00229 pop
+  }
+  03621 function webItem(argElements) {
+    00000 push r1, r2
+    00007 push 'this'
+    00012 getVariable
+    00013 storeRegister r1
+    00017 pop
+    00018 push 'argElements'
+    00023 getVariable
+    00024 storeRegister r2
+    00028 pop
+    00029 push r1, 'Id', r2, 0.0
+    00047 getMember
+    00048 setMember
+    00049 push r1, 'Nom', r2, 1
+    00063 getMember
+    00064 setMember
+    00065 push r1, 'Lien', r2, 2
+    00079 getMember
+    00080 setMember
+    00081 push r1, 'Date', r2, 3
+    00095 getMember
+    00096 setMember
+    00097 push r1, 'Fichier', r2, 4
+    00111 getMember
+    00112 setMember
+    00113 push r1, 'Info', r2, 5
+    00127 getMember
+    00128 setMember
+    00129 push r1, 'Technique', r2, 6
+    00143 getMember
+    00144 setMember
+    00145 storeRegister r2
+    00149 pop
+    00150 storeRegister r1
+    00154 pop
+  }
+  03803 function flashItem(argElements) {
+    00000 push r1, r2
+    00007 push 'this'
+    00012 getVariable
+    00013 storeRegister r1
+    00017 pop
+    00018 push 'argElements'
+    00023 getVariable
+    00024 storeRegister r2
+    00028 pop
+    00029 push r1, 'Id', r2, 0.0
+    00047 getMember
+    00048 setMember
+    00049 push r1, 'Nom', r2, 1
+    00063 getMember
+    00064 setMember
+    00065 push r1, 'Genre', r2, 2
+    00079 getMember
+    00080 setMember
+    00081 push r1, 'Fichier', r2, 3
+    00095 getMember
+    00096 setMember
+    00097 push r1, 'Description', r2, 4
+    00111 getMember
+    00112 setMember
+    00113 push r1, 'Image', r2, 5
+    00127 getMember
+    00128 setMember
+    00129 push r1, 'Poids', r2, 6
+    00143 getMember
+    00144 setMember
+    00145 storeRegister r2
+    00149 pop
+    00150 storeRegister r1
+    00154 pop
+  }
+  03987 function convertDate(tempsString) {
+    00000 push r1, r2, r3
+    00009 push ''
+    00014 storeRegister r2
+    00018 pop
+    00019 push 0.0
+    00031 storeRegister r1
+    00035 pop
+    00036 push r1, 'tempsString'
+    00043 getVariable
+    00044 push 'length'
+    00049 getMember
+    00050 greater
+    00051 not
+    00052 not
+    00053 if -> 00205
+    00058 push r1, 1, 'tempsString'
+    00070 getVariable
+    00071 push 'charAt'
+    00076 callMethod
+    00077 storeRegister r3
+    00081 pop
+    00082 push r3, ':'
+    00089 equals2
+    00090 not
+    00091 if -> 00127
+    00096 push 'min', r2, 1, 'Number'
+    00110 newObject
+    00111 defineLocal
+    00112 push ''
+    00117 storeRegister r2
+    00121 pop
+    00122 jump -> 00189
+    00127 push r3, ' '
+    00134 equals2
+    00135 not
+    00136 if -> 00162
+    00141 push 'sec', r2, 1, 'Number'
+    00155 newObject
+    00156 defineLocal
+    00157 jump -> 00189
+    00162 push r2, r1, 1, 'tempsString'
+    00176 getVariable
+    00177 push 'charAt'
+    00182 callMethod
+    00183 add2
+    00184 storeRegister r2
+    00188 pop
+    00189 push r1
+    00194 increment
+    00195 storeRegister r1
+    00199 pop
+    00200 jump -> 00036
+    00205 push 'timeSeconde', 'min'
+    00212 getVariable
+    00213 push 60
+    00221 multiply
+    00222 push 'sec'
+    00227 getVariable
+    00228 add2
+    00229 defineLocal
+    00230 push 'timeSeconde'
+    00235 getVariable
+    00236 jump -> 00245
+    00241 push undefined
+    00245 storeRegister r0
+    00249 pop
+    00250 storeRegister r3
+    00254 pop
+    00255 storeRegister r2
+    00259 pop
+    00260 storeRegister r1
+    00264 pop
+    00265 push r0
+    00270 return
+  }
+  04289 push '_global'
+  04294 getVariable
+  04295 push 'autreLoadingIsFinish', false
+  04302 setMember
+  04303 push '_root'
+  04308 getVariable
+  04309 push 'conteneur'
+  04314 getMember
+  04315 push 'btEntrer'
+  04320 getMember
+  04321 push 'onRollOver'
+  04326 function () {
+    00000 push 0.0, '_global'
+    00014 getVariable
+    00015 push 'snd_multi_evt_1'
+    00020 getMember
+    00021 push 'stop'
+    00026 callMethod
+    00027 pop
+    00028 push 0.0, '_global'
+    00042 getVariable
+    00043 push 'snd_multi_evt_1'
+    00048 getMember
+    00049 push 'start'
+    00054 callMethod
+    00055 pop
+  }
+  04390 setMember
+  04391 push '_root'
+  04396 getVariable
+  04397 push 'conteneur'
+  04402 getMember
+  04403 push 'btEntrer'
+  04408 getMember
+  04409 push 'onRelease'
+  04414 function () {
+    00000 push '_root'
+    00005 getVariable
+    00006 push 'univ'
+    00011 getMember
+    00012 push 'onEnterFrame'
+    00017 delete
+    00018 pop
+    00019 push '_root'
+    00024 getVariable
+    00025 push 'univ'
+    00030 getMember
+    00031 with {
+      00000 push 'q', 0.0
+      00014 defineLocal
+      00015 push 'q'
+      00020 getVariable
+      00021 push 'univers'
+      00026 getVariable
+      00027 push 'array'
+      00032 getMember
+      00033 push 'length'
+      00038 getMember
+      00039 less2
+      00040 not
+      00041 if -> 00131
+      00046 push 'easeInSine', 15, 'q'
+      00058 getVariable
+      00059 push 1000, 0.0, 0.0, 3
+      00090 initArray
+      00091 push undefined, 'q'
+      00097 getVariable
+      00098 push 'univers'
+      00103 getVariable
+      00104 push 7, 'RMouvement'
+      00114 callFunction
+      00115 pop
+      00116 push 'q', 'q'
+      00123 getVariable
+      00124 increment
+      00125 setVariable
+      00126 jump -> 00015
+      00131 push 'easeInOutSine', 10, 'univers'
+      00143 getVariable
+      00144 push 'array'
+      00149 getMember
+      00150 push 'length'
+      00155 getMember
+      00156 add2
+      00157 push 0.0, 0.0, 100, '_alpha', 6, '_root'
+      00192 getVariable
+      00193 push 'conteneur'
+      00198 getMember
+      00199 push 'Mouvement'
+      00204 callMethod
+      00205 pop
+      00206 function () {
+        00000 push 0.0, '_level10'
+        00014 getVariable
+        00015 push 'nextFrame'
+        00020 callMethod
+        00021 pop
+        00022 push 0.0, '_root'
+        00036 getVariable
+        00037 push 'univ'
+        00042 getMember
+        00043 push 'removeMovieClip'
+        00048 callMethod
+        00049 pop
+        00050 push 0.0, '_root'
+        00064 getVariable
+        00065 push 'conteneur'
+        00070 getMember
+        00071 push 'unloadMovie'
+        00076 callMethod
+        00077 pop
+      }
+      00292 push 2, 15, 'univers'
+      00307 getVariable
+      00308 push 'array'
+      00313 getMember
+      00314 push 'length'
+      00319 getMember
+      00320 add2
+      00321 push 3, 'retardateur'
+      00331 callFunction
+      00332 pop
+    }
+    00369 push '_root'
+    00374 getVariable
+    00375 push 'conteneur'
+    00380 getMember
+    00381 push 'btEntrer'
+    00386 getMember
+    00387 push 'onRelease'
+    00392 delete
+    00393 pop
+  }
+  04816 setMember
+  04817 push '_root'
+  04822 getVariable
+  04823 push 'conteneur'
+  04828 getMember
+  04829 push 'btEntrer'
+  04834 getMember
+  04835 push '_visible', false
+  04842 setMember
+  04843 push '_root'
+  04848 getVariable
+  04849 push 'conteneur'
+  04854 getMember
+  04855 with {
+    00000 push 'chargeur_interface'
+    00005 getVariable
+    00006 push 'barre'
+    00011 getMember
+    00012 push '_xscale', 0.0
+    00026 setMember
+    00027 push 'chargeur_sample'
+    00032 getVariable
+    00033 push 'barre'
+    00038 getMember
+    00039 push '_xscale', 0.0
+    00053 setMember
+    00054 push 'chargeur_data'
+    00059 getVariable
+    00060 push 'barre'
+    00065 getMember
+    00066 push '_xscale', 0.0
+    00080 setMember
+    00081 push 'chargeur_interface'
+    00086 getVariable
+    00087 push 'nom_txt'
+    00092 getMember
+    00093 push 'text', 'interface'
+    00100 setMember
+    00101 push 'chargeur_sample'
+    00106 getVariable
+    00107 push 'nom_txt'
+    00112 getMember
+    00113 push 'text', 'samples'
+    00120 setMember
+    00121 push 'chargeur_data'
+    00126 getVariable
+    00127 push 'nom_txt'
+    00132 getMember
+    00133 push 'text', 'donnÃ©es'
+    00140 setMember
+  }
+  05001 push 66666, 'univ', 'univ', 3, '_root'
+  05020 getVariable
+  05021 push 'attachMovie'
+  05026 callMethod
+  05027 pop
+  05028 push '_root'
+  05033 getVariable
+  05034 push 'univ'
+  05039 getMember
+  05040 push '_x', 490
+  05050 setMember
+  05051 push '_root'
+  05056 getVariable
+  05057 push 'univ'
+  05062 getMember
+  05063 push '_y', 365
+  05073 setMember
+  05074 push 'MovieClip'
+  05079 getVariable
+  05080 push 'prototype'
+  05085 getMember
+  05086 push 'preloadInterface'
+  05091 function () {
+    00000 push r1, r2
+    00007 push 'this'
+    00012 getVariable
+    00013 storeRegister r1
+    00017 pop
+    00018 push '_global'
+    00023 getVariable
+    00024 storeRegister r2
+    00028 pop
+    00029 getURL 'interface.swf', '_level10'
+    00055 push r1, 'onEnterFrame'
+    00062 function () {
+      00000 push r1, r2
+      00007 push 'this'
+      00012 getVariable
+      00013 storeRegister r1
+      00017 pop
+      00018 push '_global'
+      00023 getVariable
+      00024 storeRegister r2
+      00028 pop
+      00029 push r1, 'pourcentage', 0.0, '_level10'
+      00047 getVariable
+      00048 push 'getBytesLoaded'
+      00053 callMethod
+      00054 push 0.0, '_level10'
+      00068 getVariable
+      00069 push 'getBytesTotal'
+      00074 callMethod
+      00075 divide
+      00076 push 100
+      00084 multiply
+      00085 push 1, 'Math'
+      00095 getVariable
+      00096 push 'floor'
+      00101 callMethod
+      00102 setMember
+      00103 push r1, 'progression_txt'
+      00110 getMember
+      00111 push 'text', r1, 'pourcentage'
+      00120 getMember
+      00121 push ' %'
+      00126 add2
+      00127 setMember
+      00128 push r1, 'barre'
+      00135 getMember
+      00136 push '_xscale', r1, 'pourcentage'
+      00145 getMember
+      00146 setMember
+      00147 push 0.0, '_level10'
+      00161 getVariable
+      00162 push 'getBytesTotal'
+      00167 callMethod
+      00168 push 0.0
+      00180 greater
+      00181 pushDuplicate
+      00182 not
+      00183 if -> 00233
+      00188 pop
+      00189 push 0.0, '_level10'
+      00203 getVariable
+      00204 push 'getBytesLoaded'
+      00209 callMethod
+      00210 push 0.0, '_level10'
+      00224 getVariable
+      00225 push 'getBytesTotal'
+      00230 callMethod
+      00231 less2
+      00232 not
+      00233 not
+      00234 if -> 00358
+      00239 push r2, 'autreLoadingIsFinish'
+      00246 getMember
+      00247 not
+      00248 if -> 00339
+      00253 push '_root'
+      00258 getVariable
+      00259 push 'conteneur'
+      00264 getMember
+      00265 push 'btEntrer'
+      00270 getMember
+      00271 push '_visible', true
+      00278 setMember
+      00279 push 0.0, '_level10'
+      00293 getVariable
+      00294 push 'nextFrame'
+      00299 callMethod
+      00300 pop
+      00301 push 0.0, r2, 'snd_multi_evt_1'
+      00317 getMember
+      00318 push 'start'
+      00323 callMethod
+      00324 pop
+      00325 push r1, 'onEnterFrame'
+      00332 delete
+      00333 pop
+      00334 jump -> 00358
+      00339 push r2, 'autreLoadingIsFinish', true
+      00348 setMember
+      00349 push r1, 'onEnterFrame'
+      00356 delete
+      00357 pop
+      00358 storeRegister r2
+      00362 pop
+      00363 storeRegister r1
+      00367 pop
+    }
+    00438 setMember
+    00439 storeRegister r2
+    00443 pop
+    00444 storeRegister r1
+    00448 pop
+  }
+  05548 setMember
+  05549 push 'MovieClip'
+  05554 getVariable
+  05555 push 'prototype'
+  05560 getMember
+  05561 push 'preloadSample'
+  05566 function () {
+    00000 push r1, r2
+    00007 push 'this'
+    00012 getVariable
+    00013 storeRegister r1
+    00017 pop
+    00018 push '_global'
+    00023 getVariable
+    00024 storeRegister r2
+    00028 pop
+    00029 push 'i', 0.0
+    00043 defineLocal
+    00044 push r1, 'finish', false
+    00053 setMember
+    00054 push 'i'
+    00059 getVariable
+    00060 push 1, r1, 'loadSample'
+    00072 callMethod
+    00073 pop
+    00074 push r1, 'onEnterFrame'
+    00081 function () {
+      00000 push r1, r2
+      00007 push 'this'
+      00012 getVariable
+      00013 storeRegister r1
+      00017 pop
+      00018 push '_global'
+      00023 getVariable
+      00024 storeRegister r2
+      00028 pop
+      00029 push r1, 'pourcentage', 'i'
+      00038 getVariable
+      00039 push 1
+      00047 add2
+      00048 push r2, 'data_sample'
+      00055 getMember
+      00056 push 'length'
+      00061 getMember
+      00062 divide
+      00063 push 100
+      00071 multiply
+      00072 push 1, 'Math'
+      00082 getVariable
+      00083 push 'floor'
+      00088 callMethod
+      00089 setMember
+      00090 push r1, 'progression_txt'
+      00097 getMember
+      00098 push 'text', r1, 'pourcentage'
+      00107 getMember
+      00108 typeOf
+      00109 push 'NaN'
+      00114 equals2
+      00115 not
+      00116 if -> 00131
+      00121 push ''
+      00126 jump -> 00145
+      00131 push r1, 'pourcentage'
+      00138 getMember
+      00139 push ' %'
+      00144 add2
+      00145 setMember
+      00146 push r1, 'barre'
+      00153 getMember
+      00154 push '_xscale', r1, 'pourcentage'
+      00163 getMember
+      00164 setMember
+      00165 push r1, 'finish'
+      00172 getMember
+      00173 not
+      00174 if -> 00387
+      00179 push 'i'
+      00184 getVariable
+      00185 push r2, 'data_sample'
+      00192 getMember
+      00193 push 'length'
+      00198 getMember
+      00199 push 1
+      00207 subtract
+      00208 less2
+      00209 not
+      00210 if -> 00268
+      00215 push 'i', 'i'
+      00222 getVariable
+      00223 push 1
+      00231 add2
+      00232 setVariable
+      00233 push r1, 'finish', false
+      00242 setMember
+      00243 push 'i'
+      00248 getVariable
+      00249 push 1, r1, 'loadSample'
+      00261 callMethod
+      00262 pop
+      00263 jump -> 00387
+      00268 push r2, 'autreLoadingIsFinish'
+      00275 getMember
+      00276 not
+      00277 if -> 00368
+      00282 push '_root'
+      00287 getVariable
+      00288 push 'conteneur'
+      00293 getMember
+      00294 push 'btEntrer'
+      00299 getMember
+      00300 push '_visible', true
+      00307 setMember
+      00308 push 0.0, '_level10'
+      00322 getVariable
+      00323 push 'nextFrame'
+      00328 callMethod
+      00329 pop
+      00330 push 0.0, r2, 'snd_multi_evt_1'
+      00346 getMember
+      00347 push 'start'
+      00352 callMethod
+      00353 pop
+      00354 push r1, 'onEnterFrame'
+      00361 delete
+      00362 pop
+      00363 jump -> 00387
+      00368 push r2, 'autreLoadingIsFinish', true
+      00377 setMember
+      00378 push r1, 'onEnterFrame'
+      00385 delete
+      00386 pop
+      00387 storeRegister r2
+      00391 pop
+      00392 storeRegister r1
+      00396 pop
+    }
+    00486 setMember
+    00487 storeRegister r2
+    00491 pop
+    00492 storeRegister r1
+    00496 pop
+  }
+  06071 setMember
+  06072 push 'MovieClip'
+  06077 getVariable
+  06078 push 'prototype'
+  06083 getMember
+  06084 push 'loadSample'
+  06089 function (id) {
+    00000 push r1, r2, r3
+    00009 push '_global'
+    00014 getVariable
+    00015 storeRegister r1
+    00019 pop
+    00020 push 'this'
+    00025 getVariable
+    00026 storeRegister r2
+    00030 pop
+    00031 push '_root'
+    00036 getVariable
+    00037 storeRegister r3
+    00041 pop
+    00042 push r1, 'data_sample'
+    00049 getMember
+    00050 push 'id'
+    00055 getVariable
+    00056 getMember
+    00057 push 'file', r1, 'data_sample'
+    00066 getMember
+    00067 push 'id'
+    00072 getVariable
+    00073 getMember
+    00074 push 'file'
+    00079 getMember
+    00080 push ''
+    00085 equals2
+    00086 if -> 00117
+    00091 push r1, 'data_sample'
+    00098 getMember
+    00099 push 'id'
+    00104 getVariable
+    00105 getMember
+    00106 push 'file'
+    00111 getMember
+    00112 jump -> 00122
+    00117 push 'snd_blank'
+    00122 setMember
+    00123 push 'fichier', 'externdata/sample/', r1, 'data_sample'
+    00134 getMember
+    00135 push 'id'
+    00140 getVariable
+    00141 getMember
+    00142 push 'file'
+    00147 getMember
+    00148 add2
+    00149 push '.mp3'
+    00154 add2
+    00155 defineLocal
+    00156 push r1, r1, 'data_sample'
+    00165 getMember
+    00166 push 'id'
+    00171 getVariable
+    00172 getMember
+    00173 push 'obj'
+    00178 getMember
+    00179 push 0.0, 'Sound'
+    00193 newObject
+    00194 setMember
+    00195 push false, 'fichier'
+    00202 getVariable
+    00203 push 2, r1, r1, 'data_sample'
+    00217 getMember
+    00218 push 'id'
+    00223 getVariable
+    00224 getMember
+    00225 push 'obj'
+    00230 getMember
+    00231 getMember
+    00232 push 'loadSound'
+    00237 callMethod
+    00238 pop
+    00239 push r3, 'conteneur'
+    00246 getMember
+    00247 push 'nameSample_txt'
+    00252 getMember
+    00253 push 'text', r1, 'data_sample'
+    00262 getMember
+    00263 push 'id'
+    00268 getVariable
+    00269 getMember
+    00270 push 'obj'
+    00275 getMember
+    00276 setMember
+    00277 push 654654, 'loadControl', 2, r2, 'createEmptyMovieClip'
+    00296 callMethod
+    00297 pop
+    00298 push r2, 'loadControl'
+    00305 getMember
+    00306 push 'onEnterFrame'
+    00311 function () {
+      00000 push r1, r2, r3
+      00009 push '_global'
+      00014 getVariable
+      00015 storeRegister r1
+      00019 pop
+      00020 push 'this'
+      00025 getVariable
+      00026 storeRegister r2
+      00030 pop
+      00031 push '_root'
+      00036 getVariable
+      00037 storeRegister r3
+      00041 pop
+      00042 push r2, 'pourcentage', 0.0, r1, r1, 'data_sample'
+      00064 getMember
+      00065 push 'id'
+      00070 getVariable
+      00071 getMember
+      00072 push 'obj'
+      00077 getMember
+      00078 getMember
+      00079 push 'getBytesLoaded'
+      00084 callMethod
+      00085 push 0.0, r1, r1, 'data_sample'
+      00103 getMember
+      00104 push 'id'
+      00109 getVariable
+      00110 getMember
+      00111 push 'obj'
+      00116 getMember
+      00117 getMember
+      00118 push 'getBytesTotal'
+      00123 callMethod
+      00124 divide
+      00125 push 100
+      00133 multiply
+      00134 push 1, 'Math'
+      00144 getVariable
+      00145 push 'floor'
+      00150 callMethod
+      00151 setMember
+      00152 push r3, 'conteneur'
+      00159 getMember
+      00160 push 'percentSample_txt'
+      00165 getMember
+      00166 push 'text', r2, 'pourcentage'
+      00175 getMember
+      00176 push ' %'
+      00181 add2
+      00182 setMember
+      00183 push 0.0, r1, r1, 'data_sample'
+      00201 getMember
+      00202 push 'id'
+      00207 getVariable
+      00208 getMember
+      00209 push 'obj'
+      00214 getMember
+      00215 getMember
+      00216 push 'getBytesTotal'
+      00221 callMethod
+      00222 push 0.0
+      00234 greater
+      00235 pushDuplicate
+      00236 not
+      00237 if -> 00323
+      00242 pop
+      00243 push 0.0, r1, r1, 'data_sample'
+      00261 getMember
+      00262 push 'id'
+      00267 getVariable
+      00268 getMember
+      00269 push 'obj'
+      00274 getMember
+      00275 getMember
+      00276 push 'getBytesLoaded'
+      00281 callMethod
+      00282 push 0.0, r1, r1, 'data_sample'
+      00300 getMember
+      00301 push 'id'
+      00306 getVariable
+      00307 getMember
+      00308 push 'obj'
+      00313 getMember
+      00314 getMember
+      00315 push 'getBytesTotal'
+      00320 callMethod
+      00321 less2
+      00322 not
+      00323 not
+      00324 if -> 00398
+      00329 push r3, 'conteneur'
+      00336 getMember
+      00337 push 'nameSample_txt'
+      00342 getMember
+      00343 push 'text', ''
+      00350 setMember
+      00351 push r3, 'conteneur'
+      00358 getMember
+      00359 push 'percentSample_txt'
+      00364 getMember
+      00365 push 'text', ''
+      00372 setMember
+      00373 push r2, '_parent'
+      00380 getMember
+      00381 push 'finish', true
+      00388 setMember
+      00389 push r2, 'onEnterFrame'
+      00396 delete
+      00397 pop
+      00398 storeRegister r3
+      00402 pop
+      00403 storeRegister r2
+      00407 pop
+      00408 storeRegister r1
+      00412 pop
+    }
+    00732 setMember
+    00733 storeRegister r3
+    00737 pop
+    00738 storeRegister r2
+    00742 pop
+    00743 storeRegister r1
+    00747 pop
+  }
+  06848 setMember
+  06849 push 'System'
+  06854 getVariable
+  06855 push 'useCodepage', true
+  06862 setMember
+  06863 push 'myXML', 0.0, 'XML'
+  06879 newObject
+  06880 setVariable
+  06881 push 'myXML'
+  06886 getVariable
+  06887 push 'onLoad', 'monOnLoad'
+  06894 getVariable
+  06895 setMember
+  06896 push 'externdata/data_romdur.txt', 1, 'myXML'
+  06908 getVariable
+  06909 push 'load'
+  06914 callMethod
+  06915 pop
+  06916 push 0.0, '_root'
+  06930 getVariable
+  06931 push 'conteneur'
+  06936 getMember
+  06937 push 'chargeur_interface'
+  06942 getMember
+  06943 push 'preloadInterface'
+  06948 callMethod
+  06949 pop
+  06950 end
+ExportAssets ['10:degrade']
+PlaceObject2 depth=1 char=10 flags=0x26
+DefineEditText id=11 raw=b'0000" kerning="0"><a href="mailto:contact@romdur.com">romdur.com</a></font></p>\x00'
+PlaceObject2 depth=3 char=11 flags=0x6
+DefineEditText id=12 raw=b'\x0c\x00g\xec)G\xec+ \r0\x05\x00h\x01\xb1\xb1\xb1\xff\x01\x00\x00\x00\x00\x00\x00(\x00\x00'
+DefineEditText id=13 raw=b'\r\x00w\xfb\x08\x83\xff\xb0\x14\xe8\r1\x05\x00\xf0\x00\xb1\xb1\xb1\xff\x01\x00\x00\x00\x00\x00\x00(\x00\x00'
+DefineEditText id=14 raw=b'\x0e\x00g\xec$\xe7\xec\x0b0m1\x05\x00\xc8\x00fff\xff\x01\x00\x00\x00\x00\x00\x00(\x00\x00'
+DefineEditText id=15 raw=b'\x0f\x00_\xd8x\x1f`\xb3\x00m1\x05\x00\xc8\x00fff\xff\x01\x00\x00\x00\x00\x00\x00(\x00\x00'
+ExportAssets ['9:barre']
+DefineSprite id=16 frames=1
+  PlaceObject2 depth=1 char=14 flags=0x26
+  PlaceObject2 depth=2 char=15 flags=0x26
+  PlaceObject2 depth=3 char=9 flags=0x26
+  -- ShowFrame (end frame 1)
+  End len=0
+DefineText len=46 id=17
+DefineText len=95 id=18
+ExportAssets ['7:btEntrer']
+DefineSprite id=19 frames=1
+  PlaceObject2 depth=1 char=12 flags=0x26
+  PlaceObject2 depth=2 char=13 flags=0x26
+  PlaceObject2 depth=3 char=16 flags=0x26
+  PlaceObject2 depth=7 char=16 flags=0x26
+  PlaceObject2 depth=11 char=17 flags=0x6
+  PlaceObject2 depth=12 char=18 flags=0x6
+  PlaceObject2 depth=13 char=16 flags=0x26
+  PlaceObject2 depth=17 char=7 flags=0x26
+  -- ShowFrame (end frame 1)
+  End len=0
+PlaceObject2 depth=4 char=19 flags=0x26
+-- ShowFrame (end frame 1)
+End len=0

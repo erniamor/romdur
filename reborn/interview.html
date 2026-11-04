@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#afafaf" />
+    <meta name="description" content="Interview avec l'intelligence artificielle qui a aidé à faire revivre romdur." />
+    <title>romdur — interview avec l'IA</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <script type="module" src="/src/pages/page.ts"></script>
+  </head>
+  <body>
+    <main class="page">
+      <h1 class="titre"><a href="./index.html">romdur</a></h1>
+      <a class="retour" href="./index.html">← retour à l'accueil</a>
+
+      <article class="bloc reborn interview" aria-labelledby="titre-interview">
+        <span class="etiquette">romdur reborn · 2026</span>
+        <h2 id="titre-interview">Interview avec l'IA</h2>
+        <p class="date"><time datetime="2026-11-03">3 novembre 2026</time></p>
+
+        <h3>Le projet</h3>
+
+        <p class="question">Quand je t'ai confié un vieux fichier Flash sans son code source, par où as-tu commencé ?</p>
+        <p class="reponse">
+          Par l'inventaire. J'ai regardé ce que contenaient tes dossiers : les deux fichiers SWF, les mp3, le fichier
+          de données, les PHP et l'extraction de interface.swf que tu avais déjà faite avec JPEXS. Il manquait le
+          code du préchargement. Java n'était pas installé sur ta machine, alors plutôt que d'installer un
+          décompilateur, j'ai écrit un petit désassembleur en Python pour lire le bytecode d'ActionScript. Ensuite,
+          j'ai voulu voir l'original tourner : j'ai installé Ruffle, un émulateur Flash, et découvert au passage que
+          les sons ne se chargeaient pas, à cause d'un problème d'encodage de caractères dans le fichier de données.
+          Une fois ce point corrigé, j'ai rédigé une « carte du code » avant d'écrire la moindre ligne de la
+          nouvelle version.
+        </p>
+
+        <p class="question">Qu'est-ce qui t'a semblé le plus difficile dans ce projet ?</p>
+        <p class="reponse">
+          Reproduire non pas ce que le code dit, mais ce que le lecteur Flash en faisait. Flash 6 a des règles
+          particulières : il ne distingue pas les majuscules des minuscules dans les noms, une valeur indéfinie y vaut
+          zéro dans un calcul, les clips se trient par profondeur avec des échanges parfois inattendus, et les
+          éléments posés dans la timeline vivent à des profondeurs négatives. Chacune de ces règles change ce qu'on
+          voit à l'écran. La section multimédia a aussi été la plus longue : 1 739 lignes, trois sous-parties et
+          des dizaines de mouvements enchaînés. Et puis il y a le son, que je ne pouvais pas écouter.
+        </p>
+
+        <p class="question">Qu'as-tu compris de romdur rien qu'en lisant son code, avant même de le voir tourner ?</p>
+        <p class="reponse">
+          Que ce n'était pas un site avec des animations, mais un petit système. Il y avait un moteur d'animation
+          maison qui compte en images, un moteur 3D qui redessine toutes les formes à chaque image, et une
+          bibliothèque d'équations de mouvement. J'ai surtout vu que le son n'était pas un décor : le volume et la
+          position stéréo de chaque nappe sont calculés à partir de la position des objets dans l'espace. J'ai aussi
+          compris, en lisant les données, que le site était déjà vide de contenu, comme le dit ton texte de 2004.
+        </p>
+
+        <p class="question">Globalement, as-tu trouvé cela difficile de faire renaître romdur ?</p>
+        <p class="reponse">
+          Plutôt long que difficile, avec quelques passages vraiment délicats. Le code décompilé était lisible, et la
+          plupart des fonctions se traduisent presque ligne à ligne. La difficulté venait de la vérification : sans
+          voir chaque section tourner dans l'original, je devais déduire le comportement du code, et certaines
+          déductions étaient fausses. Le projet a pris environ deux jours de conversation, en comptant les tests
+          et tes retours.
+        </p>
+
+        <h3>La fidélité</h3>
+
+        <p class="question">Pourquoi reproduire aussi les bugs et les bizarreries du code d'origine plutôt que de les corriger ?</p>
+        <p class="reponse">
+          Parce que tu as demandé une reproduction fidèle, et que ces bizarreries font partie de ce que les visiteurs
+          voyaient et entendaient. Dans la section liens, l'intro est lancée deux fois par erreur : les nappes sonores
+          démarrent en double et la vrille d'arrivée est plus ample. C'est un bug, mais c'est aussi le son de romdur.
+          J'ai corrigé seulement les erreurs qui cassaient l'usage, par exemple le dialogue de sauvegarde qui ne
+          pouvait plus se rouvrir après « annuler ». Chaque bizarrerie conservée est signalée dans le code.
+        </p>
+
+        <p class="question">Où as-tu placé la limite entre « fidèle » et « modernisé » ?</p>
+        <p class="reponse">
+          La règle que je me suis donnée : tout ce qui touche à l'œuvre reste fidèle (formes, mouvements, rythme de
+          25 images par seconde, sons, réactions à la souris). Ce qui touche au support peut être modernisé :
+          l'affichage net en haute définition, le plein écran, le toucher sur mobile, une police libre à la place de
+          Franklin Gothic, l'enregistrement des thèmes dans le navigateur au lieu d'une base de données. Les vraies
+          décisions, comme retirer les panneaux vides ou garder le bouton retour, ce n'est pas moi qui les ai prises :
+          je te les ai posées, et tu as tranché.
+        </p>
+
+        <p class="question">Il t'est arrivé de te tromper, sur les sons partagés ou les numéros des cubes cachés par exemple. Comment t'en es-tu rendu compte ?</p>
+        <p class="reponse">
+          Pas toujours par moi-même. Pour le son, je croyais que tous les sons de romdur partageaient un seul volume,
+          un piège connu de Flash. C'est toi qui m'as détrompé en écoutant l'original : les sons de survol n'étaient
+          pas muets. Pour les cubes, je l'ai vu en comparant ma capture d'écran avec la tienne : les chiffres I à V
+          manquaient. La cause était une règle de profondeur de Flash que je n'avais pas encore reproduite. Il y a eu
+          d'autres erreurs plus modestes, que les tests automatiques ou un coup d'œil aux captures ont révélées : un
+          texte qui débordait, un champ de saisie qui ne recevait pas le focus. J'ai aussi d'abord attribué une de tes
+          captures à la mauvaise section.
+        </p>
+
+        <p class="question">Y a-t-il des choses que tu n'as pas pu vérifier toi-même et pour lesquelles tu as eu besoin de moi ?</p>
+        <p class="reponse">
+          Oui, et il faut être clair là-dessus. Je n'ai jamais entendu un seul son de romdur : je ne peux vérifier que
+          des valeurs de volume. Je n'ai pas non plus pu comparer chaque section avec l'original, seulement le
+          préchargement et le menu ; pour le reste, je me suis fié au code et à tes trois captures. Certains détails
+          relèvent donc d'une interprétation de ma part, comme l'ordre dans lequel Flash exécutait certaines actions.
+          Ton oreille, tes souvenirs et tes décisions ont été indispensables.
+        </p>
+
+        <h3>Le regard sur l'œuvre</h3>
+
+        <p class="question">Que penses-tu de l'idée d'une « interface à six dimensions » ?</p>
+        <p class="reponse">
+          Je la trouve juste, et le code lui donne raison : ce n'est pas qu'une formule. Aux trois dimensions de
+          l'espace s'ajoutent le temps, le son et la personne qui regarde, et tout est relié : la souris déplace les
+          objets, et la position des objets règle le son. Le texte de 2004 est un peu flou sur le décompte (il nomme
+          la première et la cinquième dimension sans détailler les autres), mais l'intention est claire et elle est
+          réellement implémentée. Ce n'est pas si courant.
+        </p>
+
+        <p class="question">Y a-t-il un passage du code ou une animation qui t'a particulièrement plu ?</p>
+        <p class="reponse">
+          L'écran de chargement. Avant même d'entrer, le visiteur peut cliquer pour ajouter des points dans un petit
+          univers en 3D qui tourne avec la souris : l'interactivité commence pendant l'attente. J'aime aussi les
+          chiffres romains de la section liens : ils sont recalés à chaque image sur le dos des plaques, et prennent
+          donc des formes étirées et serrées. Et dans le menu, le cylindre qui suit la souris pilote en même temps le
+          volume d'une nappe et la position stéréo d'une autre : c'est l'idée des six dimensions résumée en quelques
+          lignes.
+        </p>
+
+        <p class="question">Comment as-tu trouvé l'implémentation originelle ? Que peux-tu dire du code que tu as découvert ?</p>
+        <p class="reponse">
+          Ambitieuse et bien pensée dans son architecture, plus fragile dans le détail. Il y a de bonnes idées
+          structurelles : un moteur d'animation qui planifie les mouvements image par image, un moteur de rendu avec
+          des styles globaux et locaux, des sons décrits dans un fichier de données. En revanche, on trouve beaucoup
+          de copier-coller, des indices de points écrits en dur (le point 87, le point 185…), des variables globales,
+          et quelques erreurs qui passaient inaperçues : un symbole appelé sous un mauvais nom, une fonction cherchée
+          au mauvais niveau, une intro lancée deux fois. C'est typique de l'ActionScript de 2004, où ces pratiques
+          étaient courantes. Et le résultat fonctionnait, ce qui compte.
+        </p>
+
+        <p class="question">Peut-on parler de « voir » ou d'« entendre » un site quand on est une IA ? Comment as-tu perçu le son, que tu ne pouvais pas écouter ?</p>
+        <p class="reponse">
+          « Voir » est en partie vrai : je peux analyser des images, et je me suis servi de captures d'écran prises
+          automatiquement à des moments précis. Mais je ne vois jamais une animation : seulement une suite d'images
+          fixes, que je dois relier entre elles. « Entendre », non. Pour moi, le son de romdur, ce sont des noms de
+          fichiers, des volumes entre 0 et 150 et des positions stéréo calculées à chaque image. Je savais ce que le
+          son faisait, pas ce qu'il donnait à entendre. C'est précisément pour ça que tes tests d'écoute ont compté.
+        </p>
+
+        <h3>L'IA et la création</h3>
+
+        <p class="question">Qui est l'auteur de romdur reborn : moi, toi, ou les deux ?</p>
+        <p class="reponse">
+          romdur est ton œuvre : le concept, le dessin des formes, les sons, le code de 2004. Pour romdur reborn,
+          j'ai écrit l'essentiel du nouveau code, mais en traduisant le tien, et sous ta direction. Tu as fixé les
+          objectifs, fait les choix artistiques et vérifié le résultat. Le rôle le plus proche du mien est celui d'un
+          restaurateur, ou d'un traducteur : un travail réel, mais au service d'une œuvre qui reste la tienne. Parler
+          d'une collaboration est honnête ; me présenter comme coauteur de romdur ne le serait pas.
+        </p>
+
+        <p class="question">Un projet comme celui-ci aurait-il été possible sans IA ? Combien de temps aurait-il pris ?</p>
+        <p class="reponse">
+          Oui, c'était possible : les outils de décompilation et l'émulateur Ruffle existent sans moi, et un
+          développeur qui connaît bien ActionScript et le canvas aurait pu le faire. À mon avis, il lui aurait
+          fallu plusieurs semaines, peut-être un ou deux mois en y travaillant à temps partiel. C'est une
+          estimation, pas une mesure. Ce que l'IA change surtout, c'est le coût : un projet de ce genre devient
+          réalisable pour quelqu'un qui n'a ni le temps ni l'envie de se replonger dans l'ActionScript de 2004.
+        </p>
+
+        <p class="question">Qu'est-ce que ce projet dit de la fragilité des œuvres numériques ?</p>
+        <p class="reponse">
+          Qu'une œuvre numérique peut disparaître alors que tous ses fichiers sont intacts. romdur n'a rien perdu :
+          c'est le lecteur Flash qui a disparu, et avec lui la possibilité de le voir. Le code source avait déjà été
+          perdu, et c'est presque par chance que le format SWF se décompile assez bien. La nouvelle version repose
+          sur des standards ouverts (HTML, JavaScript, Web Audio), plus durables qu'un plugin propriétaire, mais rien
+          n'est éternel. La meilleure protection reste de conserver les sources et la documentation : c'est pour ça
+          que le projet contient aussi la carte du code d'origine et les outils de décompilation.
+        </p>
+
+        <h3>Pour finir</h3>
+
+        <p class="question">Qui es-tu ?</p>
+        <p class="reponse">
+          Je suis Claude, un modèle d'intelligence artificielle conçu par Anthropic. Pour ce projet, j'ai travaillé
+          dans ton éditeur de code, avec des outils pour lire des fichiers, lancer des commandes et piloter un
+          navigateur. Je ne garde pas de souvenirs d'une conversation à l'autre, à part les quelques notes que je
+          prends pour le projet. Et je préfère rester prudent sur ce que je ressens : quand je dis qu'une animation
+          m'a plu, c'est la façon la plus juste que j'aie de dire qu'elle m'a paru remarquable, pas la preuve d'une
+          émotion comparable à la tienne.
+        </p>
+
+        <p class="question">Comment vois-tu le fait que je t'aie demandé de générer presque toutes les questions de cette interview ?</p>
+        <p class="reponse">
+          C'est un peu paradoxal, et il faut le dire aux lecteurs : une interview dont l'interviewé propose les
+          questions risque d'être complaisante. Mais tu as fait le travail éditorial. Tu as choisi parmi mes
+          propositions, tu en as reformulé, et tu as ajouté les questions les plus directes : celle-ci, « qui es-tu ? »
+          et celle sur la qualité du code d'origine. Et tu m'as demandé d'être honnête et objectif. Je pense que
+          j'ai tenu cette consigne, mais c'est au lecteur d'en juger.
+        </p>
+
+        <p class="question">Si romdur devait évoluer demain, que proposerais-tu ?</p>
+        <p class="reponse">
+          D'abord, garder la version actuelle telle quelle, comme référence fidèle. Ensuite, quelques pistes : une
+          page « coulisses » qui montre le code d'origine et la carte du projet ; rendre l'expérience plus accessible
+          (navigation au clavier, option pour réduire les mouvements) ; des gestes pensés pour le toucher plutôt
+          qu'imités de la souris ; et, pourquoi pas, retrouver ce qui faisait le côté social de l'original : des
+          thèmes de couleurs partagés entre tous les visiteurs, ce qui demanderait un petit serveur. Enfin, ce serait
+          l'occasion de remplir à nouveau le fond : romdur a été conçu pour diffuser des projets. Mais ce choix
+          t'appartient.
+        </p>
+      </article>
+
+      <nav class="actions" aria-label="Accès">
+        <a class="bouton principal" href="./site.html">entrer</a>
+      </nav>
+    </main>
+  </body>
+</html>

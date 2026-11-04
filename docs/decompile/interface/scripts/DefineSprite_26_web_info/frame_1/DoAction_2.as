@@ -1,0 +1,14 @@
+stop();
+this.updateInfoWeb(-1);
+this.lien_txt.backgroundColor = "0x181731";
+this.lien_txt.borderColor = "0xFFFFFF";
+this.lien_txt.background = false;
+this.lien_txt.border = false;
+this.lien_txt.autoSize = true;
+nom_txt.embedFonts = true;
+percent_txt.embedFonts = true;
+lien_txt.embedFonts = true;
+info_txt.embedFonts = true;
+date_txt.embedFonts = true;
+introTechnique_txt.embedFonts = true;
+technique_txt.embedFonts = true;

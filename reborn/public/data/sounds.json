@@ -1,0 +1,242 @@
+[
+ {
+  "name": "snd_cv_out_1",
+  "file": "rythm_clap_1"
+ },
+ {
+  "name": "snd_cv_out_2",
+  "file": "rythm_clap_2"
+ },
+ {
+  "name": "snd_cv_out_3",
+  "file": "rythm_clap_3"
+ },
+ {
+  "name": "snd_cv_over_1",
+  "file": "rythm_kick_1"
+ },
+ {
+  "name": "snd_cv_over_2",
+  "file": "rythm_kick_2"
+ },
+ {
+  "name": "snd_cv_over_3",
+  "file": "kick_pur"
+ },
+ {
+  "name": "snd_cv_press_1",
+  "file": "snd_blank"
+ },
+ {
+  "name": "snd_cv_press_2",
+  "file": "snd_blank"
+ },
+ {
+  "name": "snd_cv_press_3",
+  "file": "snd_blank"
+ },
+ {
+  "name": "snd_cv_rot_1",
+  "file": "multi_synth_4_reverse"
+ },
+ {
+  "name": "snd_cv_rot_2",
+  "file": "multi_synth_4"
+ },
+ {
+  "name": "snd_cv_transition",
+  "file": "event_kick"
+ },
+ {
+  "name": "snd_glob_contact",
+  "file": "event_contact"
+ },
+ {
+  "name": "snd_glob_fin",
+  "file": "snd_info_evt_2b"
+ },
+ {
+  "name": "snd_glob_retour",
+  "file": "snd_bt_glob"
+ },
+ {
+  "name": "snd_glob_text_over",
+  "file": "event_text_1"
+ },
+ {
+  "name": "snd_glob_text_press",
+  "file": "event_text_2"
+ },
+ {
+  "name": "snd_info_amb_1",
+  "file": "snd_info_amb_5"
+ },
+ {
+  "name": "snd_info_amb_2",
+  "file": "snd_info_amb_4"
+ },
+ {
+  "name": "snd_info_amb_3",
+  "file": "snd_info_amb_3"
+ },
+ {
+  "name": "snd_info_amb_4",
+  "file": "snd_info_amb_1"
+ },
+ {
+  "name": "snd_info_amb_5",
+  "file": "snd_info_amb_6"
+ },
+ {
+  "name": "snd_info_evt_blanc",
+  "file": "snd_info_evt_2a"
+ },
+ {
+  "name": "snd_info_evt_noir",
+  "file": "snd_info_evt_2b"
+ },
+ {
+  "name": "snd_lien_evt_1",
+  "file": "snd_lien_new_evt1"
+ },
+ {
+  "name": "snd_lien_evt_2",
+  "file": "snd_lien_new_evt2"
+ },
+ {
+  "name": "snd_lien_evt_3",
+  "file": "snd_lien_new_evt3"
+ },
+ {
+  "name": "snd_lien_evt_4",
+  "file": "snd_lien_new_evt4"
+ },
+ {
+  "name": "snd_lien_evt_5",
+  "file": "snd_lien_new_evt5"
+ },
+ {
+  "name": "snd_lien_evt_6",
+  "file": "snd_lien_new_evt6"
+ },
+ {
+  "name": "snd_lien_pos_1",
+  "file": "snd_lien_pos_1"
+ },
+ {
+  "name": "snd_lien_pos_2",
+  "file": "snd_lien_pos_2"
+ },
+ {
+  "name": "snd_lien_rot_1",
+  "file": "snd_lien_rot_1"
+ },
+ {
+  "name": "snd_lien_rot_2",
+  "file": "snd_lien_rot_2"
+ },
+ {
+  "name": "snd_menu_amb_1",
+  "file": "multi_synth_4"
+ },
+ {
+  "name": "snd_menu_amb_2",
+  "file": "multi_synth_3"
+ },
+ {
+  "name": "snd_menu_bt",
+  "file": "event_bt_accueil"
+ },
+ {
+  "name": "snd_menu_central",
+  "file": "kick_pur"
+ },
+ {
+  "name": "snd_menu_cercle_a",
+  "file": "bbFaceA"
+ },
+ {
+  "name": "snd_menu_cercle_b",
+  "file": "bbFaceB"
+ },
+ {
+  "name": "snd_menu_intro_1",
+  "file": "event_kick_rev"
+ },
+ {
+  "name": "snd_menu_intro_2",
+  "file": "accueil_event_2"
+ },
+ {
+  "name": "snd_menu_intro_3",
+  "file": "event_kick"
+ },
+ {
+  "name": "snd_menu_retour_1",
+  "file": "event_kick_rev"
+ },
+ {
+  "name": "snd_menu_retour_2",
+  "file": "event_kick"
+ },
+ {
+  "name": "snd_menu_sortie",
+  "file": "event_kick"
+ },
+ {
+  "name": "snd_multi_amb_1",
+  "file": "snd_multi_amb_1"
+ },
+ {
+  "name": "snd_multi_amb_2",
+  "file": "snd_multi_amb_2"
+ },
+ {
+  "name": "snd_multi_amb_3",
+  "file": "snd_multi_amb_3"
+ },
+ {
+  "name": "snd_multi_amb_4",
+  "file": "multi_synth_4"
+ },
+ {
+  "name": "snd_multi_evt_1",
+  "file": "multi_event_01"
+ },
+ {
+  "name": "snd_multi_evt_2",
+  "file": "multi_event_02"
+ },
+ {
+  "name": "snd_multi_evt_3",
+  "file": "multi_event_03"
+ },
+ {
+  "name": "snd_multi_evt_4",
+  "file": "multi_event_04"
+ },
+ {
+  "name": "snd_multi_evt_bloc",
+  "file": "kick_pur"
+ },
+ {
+  "name": "snd_multi_evt_point_1",
+  "file": "multi_rythm"
+ },
+ {
+  "name": "snd_multi_evt_point_2",
+  "file": "multi_rythm"
+ },
+ {
+  "name": "snd_multi_flash_amb",
+  "file": "multi_synth_4"
+ },
+ {
+  "name": "snd_multi_transition",
+  "file": "event_kick"
+ },
+ {
+  "name": "snd_multi_web_amb",
+  "file": "multi_synth_4"
+ }
+]

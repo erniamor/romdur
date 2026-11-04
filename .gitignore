@@ -1,0 +1,14 @@
+# Dépendances (réinstallables : pnpm install / npm install)
+node_modules/
+
+# Builds (régénérés : pnpm build)
+dist/
+.vite/
+
+# Système et éditeurs
+.DS_Store
+Thumbs.db
+*.log
+.idea/
+.vscode/*
+!.vscode/extensions.json

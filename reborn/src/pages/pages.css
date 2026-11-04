@@ -1,0 +1,175 @@
+/*
+ * Pages de texte (accueil, interview). Deux époques, deux styles :
+ * - .origine : le texte de 2004, dans l'esprit de la page d'origine (Verdana, noir sur gris,
+ *   titre en Lucida Console, filet fin comme les tableaux HTML de l'époque) ;
+ * - .reborn : les textes de 2026, dans le style de l'interface reborn (Libre Franklin,
+ *   encadré blanc translucide et bordure sombre, comme le panneau de configuration).
+ */
+
+:root {
+  --fond: #afafaf;
+  --encre: #333333;
+  --encre-douce: #4b4b4b;
+  --filet: #8c8c8c;
+  --reborn-fond: rgba(255, 255, 255, 0.3);
+  --reborn-bord: #333333;
+  --survol: #494996;
+  --franklin: "Libre Franklin", "Franklin Gothic Medium", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { background: var(--fond); }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at 50% 38%, #cccccc 0, var(--fond) 34rem) no-repeat, var(--fond);
+  color: var(--encre);
+  font-family: var(--franklin);
+  font-weight: 500;
+}
+
+.page {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 3.5rem 1rem 4rem;
+}
+
+/* Titre d'origine : « romdur », Lucida Console 18 px gras. */
+.titre {
+  margin: 0 0 2.5rem;
+  text-align: center;
+  font: bold 1.125rem "Lucida Console", "Lucida Sans Typewriter", Monaco, monospace;
+  color: #000;
+  letter-spacing: 0.02em;
+}
+
+.titre a { color: inherit; text-decoration: none; }
+
+.etiquette {
+  display: block;
+  margin-bottom: 0.9rem;
+  font: 500 0.6875rem var(--franklin);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--encre-douce);
+}
+
+.bloc { margin-bottom: 1.75rem; padding: 1.25rem 1.4rem 1.4rem; }
+
+/* —— 2004 */
+.origine {
+  border: 1px solid var(--filet);
+  /* Fond uni de la page d'origine : l'image GIF de 2004 s'y fond. */
+  background: var(--fond);
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: #000;
+}
+
+.origine .contenu {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.origine p { margin: 0 0 0.8em; }
+.origine .annee { margin: 0; color: var(--encre-douce); }
+.origine img { display: block; width: 204px; max-width: 100%; height: auto; }
+
+/* —— 2026 */
+.reborn {
+  background: var(--reborn-fond);
+  border: 1px solid var(--reborn-bord);
+  font-size: 0.9375rem;
+  line-height: 1.65;
+}
+
+.reborn p { margin: 0 0 0.9em; }
+.reborn p:last-child { margin-bottom: 0; }
+.reborn strong { font-weight: 600; }
+
+.reborn ul { margin: 0 0 0.9em; padding-left: 1.2em; }
+.reborn li { margin-bottom: 0.3em; }
+
+kbd {
+  display: inline-block;
+  padding: 0 0.35em;
+  border: 1px solid var(--reborn-bord);
+  background: rgba(255, 255, 255, 0.5);
+  font: 600 0.8em var(--franklin);
+  line-height: 1.5;
+}
+
+/* —— boutons, dans le style des boutons de l'interface (carré blanc translucide, bordure #333) */
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.9rem;
+  margin-top: 2.25rem;
+}
+
+.bouton {
+  display: inline-block;
+  padding: 0.6rem 1.4rem;
+  border: 1px solid var(--reborn-bord);
+  background: rgba(255, 255, 255, 0.5);
+  color: var(--encre);
+  font: 500 0.9375rem var(--franklin);
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.bouton:hover, .bouton:focus-visible {
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--survol);
+  transform: scale(1.04);
+}
+
+.bouton:focus-visible { outline: 2px solid var(--survol); outline-offset: 2px; }
+
+.bouton.principal { padding: 0.75rem 2.6rem; font-size: 1.0625rem; letter-spacing: 0.12em; }
+
+/* —— interview */
+.retour {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  color: var(--encre);
+  font-size: 0.875rem;
+  text-decoration: none;
+}
+
+.retour:hover { color: var(--survol); }
+
+.interview h2 { margin: 0 0 0.2rem; font-size: 1.25rem; font-weight: 600; }
+.interview .date { margin: 0 0 1.5rem; color: var(--encre-douce); font-size: 0.875rem; }
+.interview h3 {
+  margin: 2.2rem 0 0;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(51, 51, 51, 0.35);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--encre-douce);
+}
+.interview .question { margin: 1.6em 0 0.4em; font-weight: 600; }
+.interview h3 + .question { margin-top: 1em; }
+.interview .reponse { margin: 0 0 0.9em; }
+.interview .a-venir { color: var(--encre-douce); font-style: italic; }
+
+@media (max-width: 560px) {
+  .page { padding-top: 2.25rem; }
+  .origine .contenu { grid-template-columns: 1fr; }
+  .origine img { margin: 0 auto; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bouton { transition: none; }
+  .bouton:hover, .bouton:focus-visible { transform: none; }
+}

@@ -1,0 +1,824 @@
+SWF v6 rect(twips)=[0, 19600, 0, 14600] fps=25.0 frames=1
+SetBackgroundColor len=3
+DefineSprite id=1 frames=1
+  [frame 1] DoAction:
+    stop();
+    univers = new Repere3d(500);
+    var nbPts = 0.0;
+    univers.array[nbPts] = new Particle3d(-200, 200, 0.0, this, 'pts', nbPts);
+    /* stack@label: ['random(360)', '1', 'univers'] */
+  L00268:
+    univers.array[nbPts].position.rotateZ(random(360));
+    /* stack@label: ['500', '1', 'univers.array[nbPts]'] */
+  L00323:
+    univers.array[nbPts].render(500);
+    function () {
+      if (nbPts < 50) goto L00039;
+      goto L00054;
+      /* stack@label: ["'nbPts'", '0.0'] */
+    L00039:
+      /* stack@label: ["'nbPts'", '0.0', '(nbPts + 1)'] */
+    L00054:
+      0.0 = (nbPts + 1);
+      this[('pts_' + nbPts)].removeMovieClip();
+      univers.array[nbPts] = new Particle3d(''._xmouse, (0.0 - ''._ymouse), 0.0, this, 'pts', nbPts);
+    /* stack: ["'nbPts'"] */ }
+    this.onMouseDown = <fn above>;
+    function () {
+      /* stack@label: ['(this._xmouse / 100)', '(this._ymouse / 100)'] */
+    L00042:
+      univers.rotateXY((this._ymouse / 100), (this._xmouse / 100));
+    }
+    this.onEnterFrame = <fn above>;
+  -- ShowFrame (end frame 1)
+  End len=0
+ExportAssets ['1:univ']
+DefineShape len=48 id=2
+DefineSprite id=3 frames=1
+  PlaceObject2 depth=1 char=2 flags=0x6
+  -- ShowFrame (end frame 1)
+  End len=0
+ExportAssets ['3:pts']
+DefineShape3 len=33 id=4
+DefineFont2 len=3267 id=5
+DefineText len=39 id=6
+DefineSprite id=7 frames=1
+  PlaceObject2 depth=1 char=4 flags=0x6
+  PlaceObject2 depth=2 char=6 flags=0x6
+  -- ShowFrame (end frame 1)
+  End len=0
+ExportAssets ['7:btEntrer']
+DefineShape len=23 id=8
+DefineSprite id=9 frames=1
+  PlaceObject2 depth=1 char=8 flags=0x6
+  -- ShowFrame (end frame 1)
+  End len=0
+ExportAssets ['9:barre']
+DefineSprite id=10 frames=1
+  [frame 1] DoAction:
+    function update() {
+      with (this) {
+        /* stack@label: ['clear()'] */
+      L00015:
+        clear();
+        /* stack@label: ['0.0', "'0x000000'", '1', '3', "'lineStyle'"] */
+      L00042:
+        lineStyle(1, '0x000000', 0.0);
+        colors = _global.colorDegrade;
+        alphas = [100, 100];
+        ratios = [0.0, 255];
+        matrix = {'r': 1, 'h': 500, 'w': 500, 'y': -250, 'x': -250, 'matrixType': 'box'};
+        beginGradientFill('radial', colors, alphas, ratios, matrix);
+        moveto(-490, -365);
+        lineto(490, -365);
+        lineto(490, 365);
+        lineto(-490, 365);
+        lineto(-490, -365);
+        endFill();
+      }
+    }
+    stop();
+    _global.colorDegrade = [13421772, 11513775];
+    update();
+  -- ShowFrame (end frame 1)
+  End len=0
+ExportAssets ['10:degrade']
+[frame 1] DoAction:
+  function (angle) {
+    /* stack@label: ['(angle * 0.017453292519943295)', '1', 'Math', "'sin'"] */
+  L00035:
+    /* stack@label: ['Math.sin((angle * 0.017453292519943295))'] */
+  L00036:
+    return Math.sin((angle * 0.017453292519943295));
+  }
+  Math.sinD = <fn above>;
+  function (angle) {
+    /* stack@label: ['(angle * 0.017453292519943295)', '1', 'Math', "'cos'"] */
+  L00035:
+    /* stack@label: ['Math.cos((angle * 0.017453292519943295))'] */
+  L00036:
+    return Math.cos((angle * 0.017453292519943295));
+  }
+  Math.cosD = <fn above>;
+  function (ratio) {
+    /* stack@label: ['Math.acos(ratio)', '57.29577951308232'] */
+  L00035:
+    /* stack@label: ['(Math.acos(ratio) * 57.29577951308232)'] */
+  L00036:
+    return (Math.acos(ratio) * 57.29577951308232);
+  }
+  Math.acosD = <fn above>;
+  function (x, y, z) {
+    r1 = this;
+    /* stack@label: ['r1', 'r1'] */
+  L00015:
+    r1.x = x;
+    /* stack@label: ['r1', 'r1', "'y'", "'y'"] */
+  L00036:
+    r1.y = y;
+    r1.z = z;
+    r1 = r1;
+  }
+  _global.Vector3d = <fn above>;
+  function (viewDist) {
+    r1 = viewDist;
+    /* stack@label: ['r1', 'r1'] */
+  L00015:
+    if !(r1 == undefined) goto L00042;
+    r1 = 1000;
+    /* stack@label: ['r1'] */
+  L00042:
+    goto L00072;
+    /* stack@label: ['r1', '(r1 / (this.z + r1))', 'undefined'] */
+  L00072:
+    r0 = undefined;
+    r1 = (r1 / (this.z + r1));
+    return r0;
+  /* stack: ['r1'] */ }
+  Vector3d.prototype.getPerspective = <fn above>;
+  function (p) {
+    with (this) {
+      if !(p == undefined) goto L00035;
+      p = getPerspective();
+    L00035:
+      /* stack@label: ["'x'", "'x'"] */
+    L00042:
+      x = (x * p);
+      y = (y * p);
+      z = 0.0;
+    }
+  }
+  Vector3d.prototype.persProject = <fn above>;
+  function (p) {
+    with (this) {
+      if !(p == undefined) goto L00035;
+      p = getPerspective();
+    L00035:
+      return new constructor((p * x), (p * y), 0.0);
+    }
+  }
+  Vector3d.prototype.persProjectNew = <fn above>;
+  function (ca, sa, cb, sb) {
+    with (this) {
+      /* stack@label: ["'rz'", '(y * sa)'] */
+    L00015:
+      var rz = ((y * sa) + (z * ca));
+      y = ((y * ca) - (z * sa));
+      z = ((x * (0.0 - sb)) + (rz * cb));
+      /* stack@label: ["'x'", '(x * cb)', 'rz', 'sb'] */
+    L00127:
+      x = ((x * cb) + (rz * sb));
+    }
+  }
+  /* stack@label: ['Vector3d.prototype', "'rotateXYTrig'", '<fn above>'] */
+L01265:
+  Vector3d.prototype.rotateXYTrig = <fn above>;
+  function (angle) {
+    with (Math) {
+      var ca = cosD(angle);
+      /* stack@label: ["'sa'", 'sinD(angle)'] */
+    L00039:
+      var sa = sinD(angle);
+    }
+    with (this) {
+      /* stack@label: ["'tempX'", '(x * ca)'] */
+    L00015:
+      var tempX = ((x * ca) - (y * sa));
+      var tempY = ((x * sa) + (y * ca));
+      x = tempX;
+      y = tempY;
+    }
+  }
+  Vector3d.prototype.rotateZ = <fn above>;
+  if !!(typeOf(Math.cosD) == 'function') goto L01470;
+  trace('error: Math.cosD function mission');
+L01470:
+  function (x, y, z, timeline, mcID, depth, rot) {
+    r1 = this;
+    r2 = rot;
+    /* stack@label: ['r1', 'r2', 'r1', "'position'", 'z'] */
+  L00039:
+    r1.position = new Vector3d(x, y, z);
+    /* stack@label: ['r1', 'r2', 'r1', "'timeline'", "'timeline'"] */
+  L00072:
+    r1.timeline = timeline;
+    r1.mc = r1.attachGraphic(mcID, depth);
+    if (r2 == undefined) goto L00173;
+    /* stack@label: ['r1', 'r2', 'r1', "'rotation'", 'r2[2]'] */
+  L00131:
+    goto L00211;
+    /* stack@label: ['r1', 'r2', 'r1', "'rotation'", 'new Vector3d(r2[0.0], r2[1], r2[2])'] */
+  L00173:
+    /* stack@label: ['r1', 'r2', 'r1', "'rotation'", 'new Vector3d(r2[0.0], r2[1], r2[2])', 'new Vector3d(0.0, 0.0, 0.0)'] */
+  L00211:
+    'rotation'[new Vector3d(r2[0.0], r2[1], r2[2])] = new Vector3d(0.0, 0.0, 0.0);
+    r1.scale = 100;
+    r1.render();
+    r2 = r1;
+    r1 = r2;
+  /* stack: ['r1'] */ }
+  _global.Particle3d = <fn above>;
+  function (mcID, depth) {
+    /* stack@label: ['depth', "((mcID + '_') + depth)", 'mcID', '3', 'this'] */
+  L00042:
+    /* stack@label: ["this.timeline.attachMovie(mcID, ((mcID + '_') + depth), depth)"] */
+  L00054:
+    return this.timeline.attachMovie(mcID, ((mcID + '_') + depth), depth);
+  }
+  Particle3d.prototype.attachGraphic = <fn above>;
+  function (perspective) {
+    var pers = this.position.getPerspective(perspective);
+    this.screenPos = this.position.persProjectNew(pers);
+    with (this.mc) {
+      _x = this.screenPos.x;
+      _y = (0.0 - this.screenPos.y);
+      r0 = ((this.scale * pers) * 1.5);
+      _yscale = r0;
+      _xscale = r0;
+      /* stack@label: ['100000', 'this.position.z'] */
+    L00122:
+      /* stack@label: ['100000', '(this.position.z * 100)'] */
+    L00131:
+      swapDepths((100000 - (this.position.z * 100)));
+    }
+  }
+  Particle3d.prototype.render = <fn above>;
+  function (perspective) {
+    r1 = this;
+    /* stack@label: ['r1', 'r1'] */
+  L00015:
+    /* stack@label: ['r1', 'r1', "'array'", 'new Array()'] */
+  L00035:
+    r1.array = new Array();
+    /* stack@label: ['r1'] */
+  L00036:
+    /* stack@label: ['r1', 'r1', "'idObjet'", '0.0', "'Array'"] */
+  L00054:
+    r1.idObjet = new Array();
+    r1.pers = perspective;
+    r1 = r1;
+  }
+  _global.Repere3d = <fn above>;
+  function (a, b) {
+    var p = this.pers;
+  L00015:
+    with (Math) {
+      var ca = cosD(a);
+      /* stack@label: ["'sa'", 'sinD(a)'] */
+    L00039:
+      var sa = sinD(a);
+      var cb = cosD(b);
+      var sb = sinD(b);
+    }
+    var i = this.array.length;
+  L00127:
+    i = (i - 1);
+    if !i goto L00384;
+    /* stack@label: ['sb', 'cb', 'sa', 'ca'] */
+  L00173:
+    /* stack@label: ['sb', 'cb', 'sa', 'ca', '4', 'this', "'array'"] */
+  L00189:
+    this.array[i].position.rotateXYTrig(ca, sa, cb, sb);
+    /* stack@label: ['p', '1', 'this.array'] */
+  L00233:
+    /* stack@label: ['p', '1', 'this.array[i]', "'render'"] */
+  L00245:
+    this.array[i].render(p);
+    this.array[i].rotation.x = (this.array[i].rotation.x + a);
+    /* stack@label: ['this.array[i].rotation', "'y'", 'this.array', 'i'] */
+  L00358:
+    this.array[i].rotation.y = (this.array[i].rotation.y + b);
+    goto L00127;
+  }
+  Repere3d.prototype.rotateXY = <fn above>;
+  stop();
+[frame 1] DoAction:
+  function sampleItem(argElements) {
+    this.obj = argElements[0.0];
+    /* stack@label: ['this', "'file'", 'argElements'] */
+  L00042:
+    this.file = argElements[1];
+  }
+  function monOnLoad(succÃ¨s) {
+    /* stack@label: ['r1', 'r2', 'r3', '_global'] */
+  L00015:
+    r1 = _global;
+    if !succÃ¨s goto L01571;
+    _root.conteneur.chargeur_data.barre._xscale = 100;
+    /* stack@label: ['r1', 'r2', 'r3', "'_root'"] */
+  L00072:
+    _root.conteneur.chargeur_data.progression_txt.text = '100 %';
+    /* stack@label: ['r1', 'r2', 'r3', "'dataTemp'", "'Â§'", '1', 'myXML.firstchild.firstchild', "'nodeValue'"] */
+  L00131:
+    dataTemp = myXML.firstchild.firstchild.nodeValue.split('Â§');
+    /* stack@label: ['r1', 'r2', 'r3', "'lien_menu_temp'", "dataTemp[0.0].split('#')"] */
+  L00173:
+    lien_menu_temp = dataTemp[0.0].split('#');
+    /* stack@label: ['r1', 'r2', 'r3', "'lien_site_temp'", "'#'", '1', 'dataTemp'] */
+  L00189:
+    lien_site_temp = dataTemp[1].split('#');
+    /* stack@label: ['r1', 'r2', 'r3'] */
+  L00205:
+    audio_temp = dataTemp[2].split('#');
+    web_temp = dataTemp[3].split('#');
+    flash_temp = dataTemp[4].split('#');
+    sample_temp = dataTemp[5].split('#');
+    delete 'dataTemp';
+    r1.data_lien = new Array();
+    lienMenusLink = new Array();
+    r2 = 0.0;
+    /* stack@label: ['r1', 'r2'] */
+  L00391:
+    /* stack@label: ['r1', 'r2', 'r2', "'lien_menu_temp'"] */
+  L00398:
+    if !(r2 < lien_menu_temp.length) goto L00507;
+    r1.data_lien[r2] = new lienMenuItem(lien_menu_temp[r2].split('|'));
+    lienMenusLink[r1.data_lien[r2].Id] = r2;
+    r2 = (r2 + 1);
+    goto L00391;
+    /* stack@label: ['r1', 'r2'] */
+  L00507:
+    Site = new Array();
+    lienSiteLink = new Array();
+    r2 = 0.0;
+    /* stack@label: ['r1', 'r2'] */
+  L00560:
+    if !(r2 < lien_site_temp.length) goto L00712;
+    Site[r2] = new lienSiteItem(lien_site_temp[r2].split('|'));
+    Site[r2].MenuParent = lienMenusLink[Site[r2].MenuParent];
+    lienSiteLink[Site[r2].ID] = r2;
+    r2 = (r2 + 1);
+    goto L00560;
+    /* stack@label: ['r1', 'r2'] */
+  L00712:
+    /* stack@label: ['r1', 'r2', 'ENUM(Site)'] */
+  L00719:
+    r0 = ENUM(Site);
+    if (r0 == null) goto L00805;
+    r2 = r0;
+    r1.data_lien[Site[r2].MenuParent].Site.push(Site[r2]);
+    goto L00719;
+    /* stack@label: ['r1', 'r2'] */
+  L00805:
+    delete 'lien_menu_temp';
+    delete 'lien_site_temp';
+    delete 'Site';
+    delete 'lienMenusLink';
+    delete 'lienSiteLink';
+    r1.data_audio = new Array();
+    audioLink = new Array();
+    r2 = 0.0;
+  L00895:
+    if !(r2 < audio_temp.length) goto L01011;
+    r1.data_audio[r2] = new audioItem(audio_temp[r2].split('|'));
+    audioLink[r1.data_audio[r2].Id] = r2;
+    r2 = (r2 + 1);
+    goto L00895;
+  L01011:
+    delete 'audioLink';
+    delete 'audio_temp';
+    r1.data_web = new Array();
+    webLink = new Array();
+    r2 = 0.0;
+  L01080:
+    if !(r2 < web_temp.length) goto L01196;
+    r1.data_web[r2] = new webItem(web_temp[r2].split('|'));
+    webLink[r1.data_web[r2].Id] = r2;
+    r2 = (r2 + 1);
+    goto L01080;
+  L01196:
+    delete 'webLink';
+    delete 'web_temp';
+    r1.data_flash = new Array();
+    flashLink = new Array();
+    r2 = 0.0;
+  L01265:
+    if !(r2 < flash_temp.length) goto L01381;
+    r1.data_flash[r2] = new flashItem(flash_temp[r2].split('|'));
+    flashLink[r1.data_flash[r2].Id] = r2;
+    r2 = (r2 + 1);
+    goto L01265;
+  L01381:
+    delete 'flashLink';
+    delete 'flash_temp';
+    r1.data_sample = new Array();
+    r3 = 0.0;
+  L01432:
+    if !(r3 < sample_temp.length) goto L01525;
+    r1.data_sample.push(new sampleItem(sample_temp[r3].split('|')));
+    r3 = (r3 + 1);
+    goto L01432;
+  L01525:
+    delete 'sample_temp';
+    _root.conteneur.chargeur_sample.preloadSample();
+    goto L01577;
+  L01571:
+    trace('PARSING ERROR -> data_romdur.txt not exist ?');
+  L01577:
+    r3 = <?>;
+    r2 = <?>;
+    r1 = <?>;
+  }
+  function lienMenuItem(argElements) {
+    r1 = this;
+    r2 = argElements;
+    r1.Id = r2[0.0];
+    r1.Nom = r2[1];
+    r1.Info = r2[2];
+    r1.Site = new Array();
+    r2 = r2;
+    r1 = r1;
+  }
+  function lienSiteItem(argElements) {
+    r1 = this;
+    r2 = argElements;
+    r1.Id = r2[0.0];
+    r1.MenuParent = r2[1];
+    r1.Nom = r2[2];
+    r1.Capture = r2[3];
+    r1.Info = r2[4];
+    /* stack@label: ['r1', 'r2', 'r1', "'Lien'", 'r2', '5'] */
+  L00127:
+    r1.Lien = r2[5];
+    r1.Genre = r2[6];
+    /* stack@label: ['r1', 'r2'] */
+  L00145:
+    r2 = r2;
+    r1 = r1;
+  }
+  function audioItem(argElements) {
+    r1 = this;
+    r2 = argElements;
+    r1.Id = r2[0.0];
+    r1.Nom = r2[1];
+    r1.Auteur = r2[2];
+    r1.Album = r2[3];
+    r1.Genre = r2[4];
+    /* stack@label: ['r1', 'r2', 'r1', "'Annee'", 'r2', '5'] */
+  L00127:
+    r1.Annee = r2[5];
+    r1.Note = r2[6];
+    /* stack@label: ['r1', 'r2'] */
+  L00145:
+    r1.Temps = r2[7];
+    r1.Poids = r2[8];
+    r1.Fichier = r2[9];
+    r1.TempsSec = convertDate(r2[7]);
+    r2 = r2;
+    r1 = r1;
+  }
+  function webItem(argElements) {
+    r1 = this;
+    r2 = argElements;
+    r1.Id = r2[0.0];
+    r1.Nom = r2[1];
+    r1.Lien = r2[2];
+    r1.Date = r2[3];
+    r1.Fichier = r2[4];
+    /* stack@label: ['r1', 'r2', 'r1', "'Info'", 'r2', '5'] */
+  L00127:
+    r1.Info = r2[5];
+    r1.Technique = r2[6];
+    /* stack@label: ['r1', 'r2'] */
+  L00145:
+    r2 = r2;
+    r1 = r1;
+  }
+  function flashItem(argElements) {
+    r1 = this;
+    r2 = argElements;
+    r1.Id = r2[0.0];
+    r1.Nom = r2[1];
+    r1.Genre = r2[2];
+    r1.Fichier = r2[3];
+    r1.Description = r2[4];
+    /* stack@label: ['r1', 'r2', 'r1', "'Image'", 'r2', '5'] */
+  L00127:
+    r1.Image = r2[5];
+    r1.Poids = r2[6];
+    /* stack@label: ['r1', 'r2'] */
+  L00145:
+    r2 = r2;
+    r1 = r1;
+  }
+  function convertDate(tempsString) {
+    r2 = '';
+    r1 = 0.0;
+    /* stack@label: ['r1', 'r2', 'r3', 'r1'] */
+  L00035:
+    /* stack@label: ['r1', 'r2', 'r3'] */
+  L00036:
+    if !!(r1 > tempsString.length) goto L00205;
+    r3 = tempsString.charAt(r1);
+    if !(r3 == ':') goto L00127;
+    var min = new Number(r2);
+    /* stack@label: ['r1', 'r2', 'r3', "''"] */
+  L00117:
+    r2 = '';
+    /* stack@label: ['r1', 'r2', 'r3'] */
+  L00122:
+    goto L00189;
+    /* stack@label: ['r1', 'r2', 'r3'] */
+  L00127:
+    if !(r3 == ' ') goto L00162;
+    var sec = new Number(r2);
+    goto L00189;
+    /* stack@label: ['r1', 'r2', 'r3'] */
+  L00162:
+    r2 = (r2 + tempsString.charAt(r1));
+    /* stack@label: ['r1', 'r2', 'r3'] */
+  L00189:
+    r1 = (r1 + 1);
+    goto L00036;
+    /* stack@label: ['r1', 'r2', 'r3'] */
+  L00205:
+    var timeSeconde = ((min * 60) + sec);
+    goto L00245;
+    /* stack@label: ['r1', 'r2', 'r3', 'timeSeconde', 'undefined'] */
+  L00245:
+    r0 = undefined;
+    r3 = timeSeconde;
+    r2 = r3;
+    r1 = r2;
+    return r0;
+  /* stack: ['r1'] */ }
+  _global.autreLoadingIsFinish = false;
+  function () {
+    /* stack@label: ['0.0', '_global'] */
+  L00015:
+    _global.snd_multi_evt_1.stop();
+    /* stack@label: ['0.0', "'_global'"] */
+  L00042:
+    /* stack@label: ['0.0', '_global.snd_multi_evt_1', "'start'"] */
+  L00054:
+    _global.snd_multi_evt_1.start();
+  }
+  _root.conteneur.btEntrer.onRollOver = <fn above>;
+  function () {
+    delete _root.univ['onEnterFrame'];
+    with (_root.univ) {
+      var q = 0.0;
+    L00015:
+      /* stack@label: ['q', 'univers.array.length'] */
+    L00039:
+      if !(q < univers.array.length) goto L00131;
+      RMouvement(univers, q, undefined, [0.0, 0.0, 1000], q, 15, 'easeInSine');
+      q = (q + 1);
+      goto L00015;
+    L00131:
+      /* stack@label: ["_root.conteneur.Mouvement('_alpha', 100, 0.0, 0.0, (10 + univers.array.length), 'easeInOutSine')"] */
+    L00205:
+      _root.conteneur.Mouvement('_alpha', 100, 0.0, 0.0, (10 + univers.array.length), 'easeInOutSine');
+      function () {
+        /* stack@label: ['0.0', '_level10'] */
+      L00015:
+        _level10.nextFrame();
+        /* stack@label: ['0.0', "'_root'"] */
+      L00036:
+        /* stack@label: ['0.0', '_root', "'univ'"] */
+      L00042:
+        _root.univ.removeMovieClip();
+        _root.conteneur.unloadMovie();
+      }
+      retardateur((15 + univers.array.length), 2, <fn above>);
+    }
+    /* stack@label: ['_root.conteneur.btEntrer'] */
+  L00387:
+    delete _root.conteneur.btEntrer['onRelease'];
+  }
+  _root.conteneur.btEntrer.onRelease = <fn above>;
+  _root.conteneur.btEntrer._visible = false;
+  with (_root.conteneur) {
+    chargeur_interface.barre._xscale = 0.0;
+    /* stack@label: ['chargeur_sample.barre'] */
+  L00039:
+    chargeur_sample.barre._xscale = 0.0;
+  L00054:
+    chargeur_data.barre._xscale = 0.0;
+    chargeur_interface.nom_txt.text = 'interface';
+    chargeur_sample.nom_txt.text = 'samples';
+    /* stack@label: ['chargeur_data'] */
+  L00127:
+    chargeur_data.nom_txt.text = 'donnÃ©es';
+  }
+  _root.attachMovie('univ', 'univ', 66666);
+  _root.univ._x = 490;
+  _root.univ._y = 365;
+  function () {
+    r1 = this;
+    r2 = _global;
+    getURL('interface.swf', '_level10');
+    function () {
+      r1 = this;
+      r2 = _global;
+      /* stack@label: ['r1', 'r2', 'r1', "'pourcentage'", '_level10.getBytesLoaded()'] */
+    L00054:
+      r1.pourcentage = Math.floor(((_level10.getBytesLoaded() / _level10.getBytesTotal()) * 100));
+      /* stack@label: ['r1', 'r2', 'r1.progression_txt', "'text'", "(r1.pourcentage + ' %')"] */
+    L00127:
+      r1.progression_txt.text = (r1.pourcentage + ' %');
+      /* stack@label: ['r1', 'r2', 'r1.barre', "'_xscale'", 'r1', "'pourcentage'"] */
+    L00145:
+      r1.barre._xscale = r1.pourcentage;
+      /* stack@label: ['r1', 'r2', '0.0', '_level10'] */
+    L00162:
+      if !(_level10.getBytesTotal() > 0.0) goto L00233;
+      (_level10.getBytesTotal() > 0.0);
+      /* stack@label: ['r1', 'r2'] */
+    L00189:
+      /* stack@label: ['r1', 'r2', '!(_level10.getBytesLoaded() < _level10.getBytesTotal())'] */
+    L00233:
+      if !!(_level10.getBytesLoaded() < _level10.getBytesTotal()) goto L00358;
+      if !r2.autreLoadingIsFinish goto L00339;
+      _root.conteneur.btEntrer._visible = true;
+      _level10.nextFrame();
+      /* stack@label: ['r1', 'r2', '0.0', 'r2.snd_multi_evt_1', "'start'"] */
+    L00323:
+      r2.snd_multi_evt_1.start();
+      delete r1['onEnterFrame'];
+      goto L00358;
+      /* stack@label: ['r1'] */
+    L00339:
+      r2.autreLoadingIsFinish = true;
+      delete r1['onEnterFrame'];
+    L00358:
+      r2 = <?>;
+      r1 = <?>;
+    }
+    r1.onEnterFrame = <fn above>;
+    r2 = r2;
+    r1 = r1;
+  }
+  MovieClip.prototype.preloadInterface = <fn above>;
+  function () {
+    r1 = this;
+    r2 = _global;
+    var i = 0.0;
+    r1.finish = false;
+    /* stack@label: ['r1', 'r2'] */
+  L00054:
+    /* stack@label: ['r1', 'r2', 'i', '1', 'r1', "'loadSample'"] */
+  L00072:
+    r1.loadSample(i);
+    function () {
+      r1 = this;
+      r2 = _global;
+      /* stack@label: ['r1', 'r2', 'r1', "'pourcentage'", 'i'] */
+    L00039:
+      /* stack@label: ['r1', 'r2', 'r1', "'pourcentage'", '(((i + 1) / r2.data_sample.length) * 100)'] */
+    L00072:
+      r1.pourcentage = Math.floor((((i + 1) / r2.data_sample.length) * 100));
+      if !(typeOf(r1.pourcentage) == 'NaN') goto L00131;
+      goto L00145;
+      /* stack@label: ['r1', 'r2', 'r1.progression_txt', "'text'", "''"] */
+    L00131:
+      /* stack@label: ['r1', 'r2', 'r1.progression_txt', "'text'", "''", "(r1.pourcentage + ' %')"] */
+    L00145:
+      'text'[''] = (r1.pourcentage + ' %');
+      r1.barre._xscale = r1.pourcentage;
+      /* stack@label: ['r1', 'r2', 'r1.progression_txt', 'r1.finish'] */
+    L00173:
+      if !r1.finish goto L00387;
+      if !(i < (r2.data_sample.length - 1)) goto L00268;
+      i = (i + 1);
+      /* stack@label: ['r1', 'r2', 'r1.progression_txt'] */
+    L00233:
+      r1.finish = false;
+      r1.loadSample(i);
+      goto L00387;
+      /* stack@label: ['r1', 'r2', 'r1.progression_txt'] */
+    L00268:
+      if !r2.autreLoadingIsFinish goto L00368;
+      _root.conteneur.btEntrer._visible = true;
+      /* stack@label: ['r1', 'r2', 'r1.progression_txt', '0.0', '_level10'] */
+    L00323:
+      _level10.nextFrame();
+      r2.snd_multi_evt_1.start();
+      delete r1['onEnterFrame'];
+      r1.progression_txt;
+      goto L00387;
+      /* stack@label: ['r1', 'r2'] */
+    L00368:
+      r2.autreLoadingIsFinish = true;
+      delete r1['onEnterFrame'];
+      /* stack@label: ['r1'] */
+    L00387:
+      r2 = r1;
+      /* stack@label: ['r2'] */
+    L00391:
+      r1 = <?>;
+    }
+    r1.onEnterFrame = <fn above>;
+    r2 = r2;
+    r1 = r1;
+  }
+  MovieClip.prototype.preloadSample = <fn above>;
+  function (id) {
+    /* stack@label: ['r1', 'r2', 'r3', '_global'] */
+  L00015:
+    r1 = _global;
+    r2 = this;
+    /* stack@label: ['r1', 'r2', 'r3', "'_root'"] */
+  L00036:
+    r3 = _root;
+    /* stack@label: ['r1', 'r2', 'r3'] */
+  L00042:
+    /* stack@label: ['r1', 'r2', 'r3', 'r1.data_sample[id]', "'file'", 'r1.data_sample', "'id'"] */
+  L00072:
+    if (r1.data_sample[id].file == '') goto L00117;
+    goto L00122;
+    /* stack@label: ['r1', 'r2', 'r3', 'r1.data_sample[id]', "'file'", 'r1.data_sample[id].file'] */
+  L00117:
+    /* stack@label: ['r1', 'r2', 'r3', 'r1.data_sample[id]', "'file'", 'r1.data_sample[id].file', "'snd_blank'"] */
+  L00122:
+    'file'[r1.data_sample[id].file] = 'snd_blank';
+    var fichier = (('externdata/sample/' + r1.data_sample[id].file) + '.mp3');
+    /* stack@label: ['r1', 'r2', 'r3', 'r1.data_sample[id]', 'r1', 'r1.data_sample[id]'] */
+  L00173:
+    r1[r1.data_sample[id].obj] = new Sound();
+    r1[r1.data_sample[id].obj].loadSound(fichier, false);
+    /* stack@label: ['r1', 'r2', 'r3', 'r1.data_sample[id]', 'r3.conteneur.nameSample_txt', "'text'", 'r1.data_sample', "'id'"] */
+  L00268:
+    r3.conteneur.nameSample_txt.text = r1.data_sample[id].obj;
+    r2.createEmptyMovieClip('loadControl', 654654);
+    function () {
+      /* stack@label: ['r1', 'r2', 'r3', '_global'] */
+    L00015:
+      r1 = _global;
+      r2 = this;
+      /* stack@label: ['r1', 'r2', 'r3', "'_root'"] */
+    L00036:
+      r3 = _root;
+      /* stack@label: ['r1', 'r2', 'r3'] */
+    L00042:
+      /* stack@label: ['r1', 'r2', 'r3', 'r2', "'pourcentage'", '0.0', 'r1', 'r1.data_sample[id]'] */
+    L00072:
+      /* stack@label: ['r1', 'r2', 'r3', 'r2', "'pourcentage'", 'r1[r1.data_sample[id].obj].getBytesLoaded()', '0.0', 'r1', 'r1.data_sample[id].obj'] */
+    L00117:
+      /* stack@label: ['r1', 'r2', 'r3', 'r2', "'pourcentage'", '((r1[r1.data_sample[id].obj].getBytesLoaded() / r1[r1.data_sample[id].obj].getBytesTotal()) * 100)', '1', 'Math'] */
+    L00145:
+      r2.pourcentage = Math.floor(((r1[r1.data_sample[id].obj].getBytesLoaded() / r1[r1.data_sample[id].obj].getBytesTotal()) * 100));
+      r3.conteneur.percentSample_txt.text = (r2.pourcentage + ' %');
+      if !(r1[r1.data_sample[id].obj].getBytesTotal() > 0.0) goto L00323;
+      (r1[r1.data_sample[id].obj].getBytesTotal() > 0.0);
+      /* stack@label: ['r1', 'r2', 'r3', '0.0', 'r1', 'r1.data_sample', 'id'] */
+    L00268:
+      /* stack@label: ['r1', 'r2', 'r3', '!(r1[r1.data_sample[id].obj].getBytesLoaded() < r1[r1.data_sample[id].obj].getBytesTotal())'] */
+    L00323:
+      if !!(r1[r1.data_sample[id].obj].getBytesLoaded() < r1[r1.data_sample[id].obj].getBytesTotal()) goto L00398;
+      r3.conteneur.nameSample_txt.text = '';
+      /* stack@label: ['r1', 'r2', 'r3', 'r3', "'conteneur'"] */
+    L00358:
+      r3.conteneur.percentSample_txt.text = '';
+      r2._parent.finish = true;
+      delete r2['onEnterFrame'];
+      /* stack@label: ['r1', 'r2'] */
+    L00398:
+      r3 = r2;
+      r2 = r1;
+      r1 = <?>;
+    }
+    r2.loadControl.onEnterFrame = <fn above>;
+    r3 = r1.data_sample[id];
+    r2 = r3;
+    r1 = r2;
+  /* stack: ['r1'] */ }
+  MovieClip.prototype.loadSample = <fn above>;
+  System.useCodepage = true;
+  myXML = new XML();
+  myXML.onLoad = monOnLoad;
+  myXML.load('externdata/data_romdur.txt');
+  _root.conteneur.chargeur_interface.preloadInterface();
+ExportAssets ['10:degrade']
+PlaceObject2 depth=1 char=10 flags=0x26
+DefineEditText id=11 raw=b'0000" kerning="0"><a href="mailto:contact@romdur.com">romdur.com</a></font></p>\x00'
+PlaceObject2 depth=3 char=11 flags=0x6
+DefineEditText id=12 raw=b'\x0c\x00g\xec)G\xec+ \r0\x05\x00h\x01\xb1\xb1\xb1\xff\x01\x00\x00\x00\x00\x00\x00(\x00\x00'
+DefineEditText id=13 raw=b'\r\x00w\xfb\x08\x83\xff\xb0\x14\xe8\r1\x05\x00\xf0\x00\xb1\xb1\xb1\xff\x01\x00\x00\x00\x00\x00\x00(\x00\x00'
+DefineEditText id=14 raw=b'\x0e\x00g\xec$\xe7\xec\x0b0m1\x05\x00\xc8\x00fff\xff\x01\x00\x00\x00\x00\x00\x00(\x00\x00'
+DefineEditText id=15 raw=b'\x0f\x00_\xd8x\x1f`\xb3\x00m1\x05\x00\xc8\x00fff\xff\x01\x00\x00\x00\x00\x00\x00(\x00\x00'
+ExportAssets ['9:barre']
+DefineSprite id=16 frames=1
+  PlaceObject2 depth=1 char=14 flags=0x26
+  PlaceObject2 depth=2 char=15 flags=0x26
+  PlaceObject2 depth=3 char=9 flags=0x26
+  -- ShowFrame (end frame 1)
+  End len=0
+DefineText len=46 id=17
+DefineText len=95 id=18
+ExportAssets ['7:btEntrer']
+DefineSprite id=19 frames=1
+  PlaceObject2 depth=1 char=12 flags=0x26
+  PlaceObject2 depth=2 char=13 flags=0x26
+  PlaceObject2 depth=3 char=16 flags=0x26
+  PlaceObject2 depth=7 char=16 flags=0x26
+  PlaceObject2 depth=11 char=17 flags=0x6
+  PlaceObject2 depth=12 char=18 flags=0x6
+  PlaceObject2 depth=13 char=16 flags=0x26
+  PlaceObject2 depth=17 char=7 flags=0x26
+  -- ShowFrame (end frame 1)
+  End len=0
+PlaceObject2 depth=4 char=19 flags=0x26
+-- ShowFrame (end frame 1)
+End len=0
+

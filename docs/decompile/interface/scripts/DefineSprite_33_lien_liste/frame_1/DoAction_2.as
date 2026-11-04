@@ -1,0 +1,2 @@
+placeBT(this.typeGenre);
+stop();

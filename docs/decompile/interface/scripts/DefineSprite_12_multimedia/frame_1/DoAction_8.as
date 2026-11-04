@@ -1,0 +1,2 @@
+introMultimedia();
+stop();
